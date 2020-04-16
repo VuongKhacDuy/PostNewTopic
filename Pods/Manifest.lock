@@ -1,0 +1,25 @@
+PODS:
+  - Gridicons (1.0.1)
+  - WordPress-Aztec-iOS (1.17.1)
+  - WordPress-Editor-iOS (1.17.1):
+    - WordPress-Aztec-iOS (= 1.17.1)
+
+DEPENDENCIES:
+  - Gridicons
+  - WordPress-Aztec-iOS
+  - WordPress-Editor-iOS
+
+SPEC REPOS:
+  trunk:
+    - Gridicons
+    - WordPress-Aztec-iOS
+    - WordPress-Editor-iOS
+
+SPEC CHECKSUMS:
+  Gridicons: 8e19276b20bb15d1fda1d4d0db96d066d170135b
+  WordPress-Aztec-iOS: 319620514af963ca519bd83b96a2c0ebdf3a0f03
+  WordPress-Editor-iOS: 497b55838ef0030cc6ca82eb92da84e661423521
+
+PODFILE CHECKSUM: 14728548b90b0d2eba2e08ed51b7cf99508a2553
+
+COCOAPODS: 1.9.1
