@@ -79,7 +79,7 @@
                         <viewLayoutGuide key="safeArea" id="Dgp-ni-jgp"/>
                     </view>
                     <connections>
-                        <outlet property="experienceView" destination="F1o-Yy-TzZ" id="UQb-4R-Nbc"/>
+                        <outlet property="experienceView" destination="F1o-Yy-TzZ" id="Wyn-cc-UPb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

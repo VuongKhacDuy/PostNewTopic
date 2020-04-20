@@ -68,8 +68,7 @@ class HLMentionsTextView: UITextView {
     
 //    var hlFont : UIFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
 //    var hlTextColor : UIColor = UIColor.darkText
-    
-    
+
     
     // search
     var hlMentionSearchInfo = HLMentionSearchInfo()

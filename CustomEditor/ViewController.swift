@@ -1396,17 +1396,3 @@ extension FormattingIdentifier{
     public static let setLocation = FormattingIdentifier("location")
     public static let tagUser = FormattingIdentifier("tagUser")
 }
-
-// extension textview for toggle tagUser
-extension TextView {
-//    /// Adds or removes a tag user from the specified range.
-//    ///
-//    /// - Parameter range: The NSRange to edit.
-//    ///
-//    open func toggleTagUser(range: NSRange) {
-//        let tagView: UIView
-//
-//    }
-//}
-}
-// extension textView for toggle setLocation
