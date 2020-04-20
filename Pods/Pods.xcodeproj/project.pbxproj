@@ -8,6 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		023E1CF8AA156F9FA0CAD1CF6E3E37AB /* BoldFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673598FE953D2593A85C2367B8EAE864 /* BoldFormatter.swift */; };
+		051232F2244D7C83001371FE /* HLMention+NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E5244D7C83001371FE /* HLMention+NSMutableAttributedString.swift */; };
+		051232F3244D7C83001371FE /* HLMention+NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E5244D7C83001371FE /* HLMention+NSMutableAttributedString.swift */; };
+		051232F4244D7C83001371FE /* HLMention+NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E5244D7C83001371FE /* HLMention+NSMutableAttributedString.swift */; };
+		051232F5244D7C83001371FE /* HLMention+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E6244D7C83001371FE /* HLMention+Display.swift */; };
+		051232F6244D7C83001371FE /* HLMention+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E6244D7C83001371FE /* HLMention+Display.swift */; };
+		051232F7244D7C83001371FE /* HLMention+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E6244D7C83001371FE /* HLMention+Display.swift */; };
+		051232F8244D7C83001371FE /* HLMentionSearchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E8244D7C83001371FE /* HLMentionSearchInfo.swift */; };
+		051232F9244D7C83001371FE /* HLMentionSearchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E8244D7C83001371FE /* HLMentionSearchInfo.swift */; };
+		051232FA244D7C83001371FE /* HLMentionSearchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E8244D7C83001371FE /* HLMentionSearchInfo.swift */; };
+		051232FB244D7C83001371FE /* HLMentionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E9244D7C83001371FE /* HLMentionInfo.swift */; };
+		051232FC244D7C83001371FE /* HLMentionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E9244D7C83001371FE /* HLMentionInfo.swift */; };
+		051232FD244D7C83001371FE /* HLMentionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232E9244D7C83001371FE /* HLMentionInfo.swift */; };
+		051232FE244D7C83001371FE /* HLMention+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232EA244D7C83001371FE /* HLMention+UITextView.swift */; };
+		051232FF244D7C83001371FE /* HLMention+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232EA244D7C83001371FE /* HLMention+UITextView.swift */; };
+		05123300244D7C83001371FE /* HLMention+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232EA244D7C83001371FE /* HLMention+UITextView.swift */; };
+		05123301244D7C83001371FE /* HLMentionsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232EB244D7C83001371FE /* HLMentionsTextView.swift */; };
+		05123302244D7C83001371FE /* HLMentionsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232EB244D7C83001371FE /* HLMentionsTextView.swift */; };
+		05123303244D7C83001371FE /* HLMentionsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232EB244D7C83001371FE /* HLMentionsTextView.swift */; };
+		05123304244D7C83001371FE /* HLMentionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232ED244D7C83001371FE /* HLMentionTableViewCell.swift */; };
+		05123305244D7C83001371FE /* HLMentionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232ED244D7C83001371FE /* HLMentionTableViewCell.swift */; };
+		05123306244D7C83001371FE /* HLMentionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232ED244D7C83001371FE /* HLMentionTableViewCell.swift */; };
+		05123307244D7C83001371FE /* HLMentionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051232EE244D7C83001371FE /* HLMentionTableViewCell.xib */; };
+		05123308244D7C83001371FE /* HLMentionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051232EE244D7C83001371FE /* HLMentionTableViewCell.xib */; };
+		05123309244D7C83001371FE /* HLMentionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051232EE244D7C83001371FE /* HLMentionTableViewCell.xib */; };
+		0512330A244D7C83001371FE /* HLMention+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232EF244D7C83001371FE /* HLMention+UITableView.swift */; };
+		0512330B244D7C83001371FE /* HLMention+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232EF244D7C83001371FE /* HLMention+UITableView.swift */; };
+		0512330C244D7C83001371FE /* HLMention+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232EF244D7C83001371FE /* HLMention+UITableView.swift */; };
+		0512330D244D7C83001371FE /* HLInstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232F0244D7C83001371FE /* HLInstant.swift */; };
+		0512330E244D7C83001371FE /* HLInstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232F0244D7C83001371FE /* HLInstant.swift */; };
+		0512330F244D7C83001371FE /* HLInstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232F0244D7C83001371FE /* HLInstant.swift */; };
+		05123310244D7C83001371FE /* HLMention+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232F1244D7C83001371FE /* HLMention+String.swift */; };
+		05123311244D7C83001371FE /* HLMention+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232F1244D7C83001371FE /* HLMention+String.swift */; };
+		05123312244D7C83001371FE /* HLMention+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051232F1244D7C83001371FE /* HLMention+String.swift */; };
 		09A22E02142F62D30D9E67A8F3882C64 /* GutenbergAttributeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA78330CD2826079B836636C3E80E67 /* GutenbergAttributeNames.swift */; };
 		09E4F2FD1697C8FEC6B477FBB94EE9E0 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C740264552239708BDA66703DB4201 /* Node.swift */; };
 		0BDFD8FF031D64FCADBEE02B794DD8E4 /* ImageElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3309B7001922B212F680C45EB47FCB6 /* ImageElementConverter.swift */; };
@@ -287,7 +320,18 @@
 		02739BD5932199F3B478DD78C6D92808 /* GutenpackAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenpackAttachment.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenpackAttachment.swift; sourceTree = "<group>"; };
 		028780962F4A7A3A930F8389AA4B40B3 /* NSTextingResult+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSTextingResult+Helpers.swift"; path = "Aztec/Classes/Extensions/NSTextingResult+Helpers.swift"; sourceTree = "<group>"; };
 		02B6568CDAC9507EAB5B4CC8127DC4A1 /* UIPasteboard+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIPasteboard+Helpers.swift"; path = "Aztec/Classes/Extensions/UIPasteboard+Helpers.swift"; sourceTree = "<group>"; };
-		054F7D5ABE4FB0829A043D691B3A9B47 /* html_colors.json */ = {isa = PBXFileReference; includeInIndex = 1; name = html_colors.json; path = Aztec/Assets/html_colors.json; sourceTree = "<group>"; };
+		051232E5244D7C83001371FE /* HLMention+NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+NSMutableAttributedString.swift"; sourceTree = "<group>"; };
+		051232E6244D7C83001371FE /* HLMention+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+Display.swift"; sourceTree = "<group>"; };
+		051232E8244D7C83001371FE /* HLMentionSearchInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionSearchInfo.swift; sourceTree = "<group>"; };
+		051232E9244D7C83001371FE /* HLMentionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionInfo.swift; sourceTree = "<group>"; };
+		051232EA244D7C83001371FE /* HLMention+UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+UITextView.swift"; sourceTree = "<group>"; };
+		051232EB244D7C83001371FE /* HLMentionsTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionsTextView.swift; sourceTree = "<group>"; };
+		051232ED244D7C83001371FE /* HLMentionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionTableViewCell.swift; sourceTree = "<group>"; };
+		051232EE244D7C83001371FE /* HLMentionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLMentionTableViewCell.xib; sourceTree = "<group>"; };
+		051232EF244D7C83001371FE /* HLMention+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+UITableView.swift"; sourceTree = "<group>"; };
+		051232F0244D7C83001371FE /* HLInstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLInstant.swift; sourceTree = "<group>"; };
+		051232F1244D7C83001371FE /* HLMention+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+String.swift"; sourceTree = "<group>"; };
+		054F7D5ABE4FB0829A043D691B3A9B47 /* html_colors.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = html_colors.json; path = Aztec/Assets/html_colors.json; sourceTree = "<group>"; };
 		0596F309AE287A82071766597512B53E /* HTMLPre.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLPre.swift; path = Aztec/Classes/TextKit/ParagraphProperty/HTMLPre.swift; sourceTree = "<group>"; };
 		06C5B5928699AAC21DDBC124C66365BF /* BoldCSSAttributeMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BoldCSSAttributeMatcher.swift; path = Aztec/Classes/Libxml2/DOM/Logic/CSS/BoldCSSAttributeMatcher.swift; sourceTree = "<group>"; };
 		07FC50A71162F39D8E13A2CE5FC6F911 /* Pods-CustomEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CustomEditor-dummy.m"; sourceTree = "<group>"; };
@@ -331,7 +375,7 @@
 		2E326993F4052872DF43F4DF283568F2 /* Media.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Aztec/Assets/Media.xcassets; sourceTree = "<group>"; };
 		308B5159029B41FE3308B7BD6A16F0B8 /* AutoPProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoPProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/AutopRemovep/AutoPProcessor.swift; sourceTree = "<group>"; };
 		31A605914D002D098096FC71DFC01EE3 /* FormatterElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatterElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Base/FormatterElementConverter.swift; sourceTree = "<group>"; };
-		337B4ACD9A49A40116934009DFFB7FFD /* Aztec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Aztec.framework; path = "WordPress-Aztec-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		337B4ACD9A49A40116934009DFFB7FFD /* Aztec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Aztec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B125EC321ADEEBD66617154B932793 /* ElementNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementNode.swift; path = Aztec/Classes/Libxml2/DOM/Data/ElementNode.swift; sourceTree = "<group>"; };
 		340D74C6990636BB06B932972FD13BF4 /* NSAttributedString+ReplaceOcurrences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+ReplaceOcurrences.swift"; path = "Aztec/Classes/Extensions/NSAttributedString+ReplaceOcurrences.swift"; sourceTree = "<group>"; };
 		3413C32A0802B63431E6490EDA6E9B42 /* GalleryElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryElementConverter.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/GalleryShortcode/GalleryElementConverter.swift; sourceTree = "<group>"; };
@@ -420,8 +464,8 @@
 		7EFB117A3BBF05F344B2BBED681FB2BE /* NSAttributedString+Archive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Archive.swift"; path = "Aztec/Classes/Extensions/NSAttributedString+Archive.swift"; sourceTree = "<group>"; };
 		7F6854402A8933BCD31FF871B3463C06 /* GenericElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Implementations/GenericElementConverter.swift; sourceTree = "<group>"; };
 		81036B0A67DCEA318FD9A263BDEEBBD7 /* PluginInputCustomizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PluginInputCustomizer.swift; path = Aztec/Classes/Plugin/PluginInputCustomizer.swift; sourceTree = "<group>"; };
-		823B04E41F978BE6822C177253CA0A37 /* Gridicons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gridicons.framework; path = Gridicons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		82D33174407FD4DFBDB53588C99A58A2 /* Gridicons.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Gridicons.bundle; path = "Gridicons-Gridicons.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		823B04E41F978BE6822C177253CA0A37 /* Gridicons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gridicons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82D33174407FD4DFBDB53588C99A58A2 /* Gridicons.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gridicons.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		832FC30696CA71411A53AB4F49DDAEAA /* NSLayoutManager+Attachments.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutManager+Attachments.swift"; path = "Aztec/Classes/Extensions/NSLayoutManager+Attachments.swift"; sourceTree = "<group>"; };
 		8477C07C9CC93CB69461AA09514D9D45 /* NSRange+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSRange+Helpers.swift"; path = "Aztec/Classes/Extensions/NSRange+Helpers.swift"; sourceTree = "<group>"; };
 		8562A99CC58D5CCCFAD24B361041B7D9 /* UnderlineFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnderlineFormatter.swift; path = Aztec/Classes/Formatters/Implementations/UnderlineFormatter.swift; sourceTree = "<group>"; };
@@ -443,7 +487,7 @@
 		9AE64BCAD0CCBE8C176B331821EE690D /* EmbedURLProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmbedURLProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Processors/EmbedURLProcessor.swift; sourceTree = "<group>"; };
 		9B3EAB8B7A576F819866806A43A877BF /* EditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EditorView.swift; path = Aztec/Classes/EditorView/EditorView.swift; sourceTree = "<group>"; };
 		9CAD26C777FD8DCF88B2031C408D6FD6 /* RenderableAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RenderableAttachment.swift; path = Aztec/Classes/TextKit/RenderableAttachment.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E3BB0EA3A89D699AD31F5E7AD290091 /* NSAttributedStringKey+Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedStringKey+Conversion.swift"; path = "Aztec/Classes/Extensions/NSAttributedStringKey+Conversion.swift"; sourceTree = "<group>"; };
 		9EF6C7DD58FD66C41AFE14C84787A545 /* CSSAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSSAttribute.swift; path = Aztec/Classes/Libxml2/DOM/Data/CSSAttribute.swift; sourceTree = "<group>"; };
 		A11FDD152042ECE57D2957DFE6CF064F /* VideoAttachmentToElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoAttachmentToElementConverter.swift; path = Aztec/Classes/NSAttributedString/Conversions/AttachmentToElementConverter/VideoAttachmentToElementConverter.swift; sourceTree = "<group>"; };
@@ -451,7 +495,7 @@
 		A4C9C498DE11638E6BBED28F66FE600D /* String+RangeConversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+RangeConversion.swift"; path = "Aztec/Classes/Extensions/String+RangeConversion.swift"; sourceTree = "<group>"; };
 		A4D350F9DAE34DD4A90FD59774E261D4 /* LiFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LiFormatter.swift; path = Aztec/Classes/Formatters/Implementations/LiFormatter.swift; sourceTree = "<group>"; };
 		A5154470077F7457F44BB12A0B2788BC /* StrikethroughFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StrikethroughFormatter.swift; path = Aztec/Classes/Formatters/Implementations/StrikethroughFormatter.swift; sourceTree = "<group>"; };
-		A630A05CA0CA688C3B11F4807D366C77 /* WordPressEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WordPressEditor.framework; path = "WordPress-Editor-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A630A05CA0CA688C3B11F4807D366C77 /* WordPressEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WordPressEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A350380083FAD672C11EF0F45CE976 /* CaptionShortcodeOutputProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CaptionShortcodeOutputProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/CaptionShortcode/CaptionShortcodeOutputProcessor.swift; sourceTree = "<group>"; };
 		AA2171AF390D9AD24846C4894782F29E /* FormatBarItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatBarItem.swift; path = Aztec/Classes/GUI/FormatBar/FormatBarItem.swift; sourceTree = "<group>"; };
 		AA7091D387E8C6EC77C31A6C7686334D /* VideoShortcodeProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoShortcodeProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/VideoShortcode/VideoShortcodeProcessor.swift; sourceTree = "<group>"; };
@@ -477,7 +521,7 @@
 		BF7A18BB9F0573F0E7FF848D77F85C7B /* String+CharacterName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+CharacterName.swift"; path = "Aztec/Classes/Extensions/String+CharacterName.swift"; sourceTree = "<group>"; };
 		C095C0BC531808C16625231EF6CD6D22 /* HeaderFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeaderFormatter.swift; path = Aztec/Classes/Formatters/Implementations/HeaderFormatter.swift; sourceTree = "<group>"; };
 		C1110BBCF659FD657ADE1F85182F17A5 /* RemovePProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RemovePProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/AutopRemovep/RemovePProcessor.swift; sourceTree = "<group>"; };
-		C417EB24EA443F14B2EF5F35E63FA887 /* WordPress-Aztec-iOS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "WordPress-Aztec-iOS.bundle"; path = "WordPress-Aztec-iOS-WordPress-Aztec-iOS.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C417EB24EA443F14B2EF5F35E63FA887 /* WordPress-Aztec-iOS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WordPress-Aztec-iOS.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C42D5FF70D8F48B5ABD4229A425CF7BB /* Assets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Assets.swift; path = Aztec/Classes/GUI/Assets.swift; sourceTree = "<group>"; };
 		C5A61148E8020E67240A2911FBD26FEC /* ResourceBundle-Gridicons-Gridicons-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Gridicons-Gridicons-Info.plist"; sourceTree = "<group>"; };
 		C6DD037B9370BD2495EB648D660FDB87 /* PipelineProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PipelineProcessor.swift; path = Aztec/Classes/Processor/PipelineProcessor.swift; sourceTree = "<group>"; };
@@ -496,7 +540,7 @@
 		D2F6501FE1EFC0512EB955E7C0AD28A8 /* Dictionary+AttributedStringKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+AttributedStringKey.swift"; path = "Aztec/Classes/Extensions/Dictionary+AttributedStringKey.swift"; sourceTree = "<group>"; };
 		D30C847C4F59CA6DB3948D63DB221FF9 /* AttributeFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributeFormatter.swift; path = Aztec/Classes/Formatters/Base/AttributeFormatter.swift; sourceTree = "<group>"; };
 		D3309B7001922B212F680C45EB47FCB6 /* ImageElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Implementations/ImageElementConverter.swift; sourceTree = "<group>"; };
-		D5D57D9368573375B5B556173D7394AE /* Pods_CustomEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CustomEditor.framework; path = "Pods-CustomEditor.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5D57D9368573375B5B556173D7394AE /* Pods_CustomEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D651DE5AC8EB83AB65E73F693EBA558C /* HTMLTreeProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLTreeProcessor.swift; path = Aztec/Classes/Processor/HTMLTreeProcessor.swift; sourceTree = "<group>"; };
 		D7129E47D3B3450EF047F2966995D36C /* BoldElementAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BoldElementAttributeConverter.swift; path = Aztec/Classes/Converters/AttributesToStringAttributes/Implementations/BoldElementAttributeConverter.swift; sourceTree = "<group>"; };
 		D99208D8898B67BB118CC73706775AB2 /* WordPress-Editor-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "WordPress-Editor-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -590,6 +634,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		051232E4244D7C83001371FE /* HLMention */ = {
+			isa = PBXGroup;
+			children = (
+				051232E5244D7C83001371FE /* HLMention+NSMutableAttributedString.swift */,
+				051232E6244D7C83001371FE /* HLMention+Display.swift */,
+				051232E7244D7C83001371FE /* HLMentionInfo */,
+				051232EA244D7C83001371FE /* HLMention+UITextView.swift */,
+				051232EB244D7C83001371FE /* HLMentionsTextView.swift */,
+				051232EC244D7C83001371FE /* HLMentionTableView */,
+				051232EF244D7C83001371FE /* HLMention+UITableView.swift */,
+				051232F0244D7C83001371FE /* HLInstant.swift */,
+				051232F1244D7C83001371FE /* HLMention+String.swift */,
+			);
+			path = HLMention;
+			sourceTree = "<group>";
+		};
+		051232E7244D7C83001371FE /* HLMentionInfo */ = {
+			isa = PBXGroup;
+			children = (
+				051232E8244D7C83001371FE /* HLMentionSearchInfo.swift */,
+				051232E9244D7C83001371FE /* HLMentionInfo.swift */,
+			);
+			path = HLMentionInfo;
+			sourceTree = "<group>";
+		};
+		051232EC244D7C83001371FE /* HLMentionTableView */ = {
+			isa = PBXGroup;
+			children = (
+				051232ED244D7C83001371FE /* HLMentionTableViewCell.swift */,
+				051232EE244D7C83001371FE /* HLMentionTableViewCell.xib */,
+			);
+			path = HLMentionTableView;
+			sourceTree = "<group>";
+		};
 		20A1373E66BB55F97E7E92FD9E2338D7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,7 +725,6 @@
 				44EB58D595AFB00DC82D873AE348818B /* Resources */,
 				20A1373E66BB55F97E7E92FD9E2338D7 /* Support Files */,
 			);
-			name = "WordPress-Editor-iOS";
 			path = "WordPress-Editor-iOS";
 			sourceTree = "<group>";
 		};
@@ -878,7 +955,6 @@
 				4C8C3F23B66F3DF7EAECFF2F6AD1D33A /* Resources */,
 				74946ED09A67B9140F5CEA9C87F6CAD3 /* Support Files */,
 			);
-			name = "WordPress-Aztec-iOS";
 			path = "WordPress-Aztec-iOS";
 			sourceTree = "<group>";
 		};
@@ -919,7 +995,6 @@
 				4CE552ACDAE168428F1021C6F414770A /* Resources */,
 				FC5B3F55EB58B9D0D9D0D4DFC4BC6944 /* Support Files */,
 			);
-			name = Gridicons;
 			path = Gridicons;
 			sourceTree = "<group>";
 		};
@@ -934,6 +1009,7 @@
 		B79EBB0B8F1EEFF0ED9C32E1B31CD799 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				051232E4244D7C83001371FE /* HLMention */,
 				A7772717F7FB82F6E6580A2EECA18019 /* Gridicons */,
 				73192A711EF410C1123B802A1CB2F10D /* WordPress-Aztec-iOS */,
 				3876B3AA6F71A41C2E34C6BD7DABAB03 /* WordPress-Editor-iOS */,
@@ -1181,6 +1257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05123309244D7C83001371FE /* HLMentionTableViewCell.xib in Resources */,
 				9F8B0486E41F222907D97D84B8F9F0C6 /* aztec.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1189,6 +1266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05123307244D7C83001371FE /* HLMentionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,6 +1282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05123308244D7C83001371FE /* HLMentionTableViewCell.xib in Resources */,
 				2373A93AA3D1869D3A11680842142B91 /* WordPress-Aztec-iOS.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1229,7 +1308,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05123304244D7C83001371FE /* HLMentionTableViewCell.swift in Sources */,
+				0512330D244D7C83001371FE /* HLInstant.swift in Sources */,
+				051232FE244D7C83001371FE /* HLMention+UITextView.swift in Sources */,
+				05123301244D7C83001371FE /* HLMentionsTextView.swift in Sources */,
+				0512330A244D7C83001371FE /* HLMention+UITableView.swift in Sources */,
+				051232FB244D7C83001371FE /* HLMentionInfo.swift in Sources */,
+				051232F8244D7C83001371FE /* HLMentionSearchInfo.swift in Sources */,
 				A13FDEE17DF2B30E083ED86F4C3ED8B1 /* Pods-CustomEditor-dummy.m in Sources */,
+				051232F5244D7C83001371FE /* HLMention+Display.swift in Sources */,
+				05123310244D7C83001371FE /* HLMention+String.swift in Sources */,
+				051232F2244D7C83001371FE /* HLMention+NSMutableAttributedString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1267,6 +1356,7 @@
 				97CA0B3EA2BFED64C40E0D25505935E0 /* CommentAttachment.swift in Sources */,
 				253A1719D3907B9C4514688E1238032B /* CommentAttachmentRenderer.swift in Sources */,
 				4B93A65864645955A8FBE768BC8A78B4 /* CommentAttachmentToElementConverter.swift in Sources */,
+				05123302244D7C83001371FE /* HLMentionsTextView.swift in Sources */,
 				4A85B8E1FB47039865705A8B58D29DCC /* CommentNode.swift in Sources */,
 				EAF27EFC851FFC95A5501D6D6E3544E3 /* ConditionalItalicStringAttributeConverter.swift in Sources */,
 				FB3AF702059EED08DFCB880F8388308E /* ConditionalStringAttributeConverter.swift in Sources */,
@@ -1279,6 +1369,7 @@
 				391B3DF00ABE22393B7196C629A29589 /* Dictionary+AttributedStringKey.swift in Sources */,
 				D222BBFF75D094B75AFCE890D2D1096C /* DocumentReadingOptionKey+Swift4.swift in Sources */,
 				38B8AF5B450C9F35AB411257F2116CCC /* DocumentType+Swift4.swift in Sources */,
+				05123311244D7C83001371FE /* HLMention+String.swift in Sources */,
 				3C30058F54ADBBA8E7C6893E1F68855E /* EditorView.swift in Sources */,
 				C7D4C5276B7A9571737161CE4228CF37 /* Element.swift in Sources */,
 				BE20C01168ADB6854C3A3C99DCFDA09E /* ElementAttributeConverter.swift in Sources */,
@@ -1296,6 +1387,7 @@
 				F6AA793AE8FA93230EE4B8C63FF6EC9B /* ForegroundColorCSSAttributeMatcher.swift in Sources */,
 				338527678E906E819A179D1A2129B9C0 /* ForegroundColorElementAttributeConverter.swift in Sources */,
 				675BFB6FF4E792865A3A67E1428B2862 /* FormatBar.swift in Sources */,
+				051232F9244D7C83001371FE /* HLMentionSearchInfo.swift in Sources */,
 				EC58A1818A522E47ACF7E4309051FF78 /* FormatBarDelegate.swift in Sources */,
 				A6C3498C539F9C90E8375096012C7723 /* FormatBarItem.swift in Sources */,
 				2B671E79E94C5506B33C01597C4CC103 /* FormatterElementConverter.swift in Sources */,
@@ -1325,12 +1417,14 @@
 				A683F617C88FB38803516B8585E8022F /* ImageAttachment.swift in Sources */,
 				4FE1925B71CA134434FBEB28375C1AA0 /* ImageAttachmentToElementConverter.swift in Sources */,
 				0BDFD8FF031D64FCADBEE02B794DD8E4 /* ImageElementConverter.swift in Sources */,
+				051232F3244D7C83001371FE /* HLMention+NSMutableAttributedString.swift in Sources */,
 				4631F9F16C6BA4A829AEEC1A99BB5CCF /* InAttributeConverter.swift in Sources */,
 				20DF970BA367863AF6026F2A56CACCA1 /* InAttributesConverter.swift in Sources */,
 				5D588D7CF702CB0A44D6D6B32CD5CFC4 /* InNodeConverter.swift in Sources */,
 				4454D1F08144CE60AED48C4A1898B7B6 /* InNodesConverter.swift in Sources */,
 				D2F9F57C9A6856171CA4BD0B2547E3A2 /* ItalicCSSAttributeMatcher.swift in Sources */,
 				F49D135FC4B52E72D22FDC19CA49FB64 /* ItalicElementAttributeConverter.swift in Sources */,
+				0512330E244D7C83001371FE /* HLInstant.swift in Sources */,
 				25DAB0CC227BB1EB35D76C57D4D484D8 /* ItalicFormatter.swift in Sources */,
 				FA1F8D9664716BB09A8C8673F053CA6E /* ItalicStringAttributeConverter.swift in Sources */,
 				8682B8BF9F90708500A90AFD52A2AAAE /* LayoutManager.swift in Sources */,
@@ -1339,6 +1433,7 @@
 				A460F299A5B6F6BF0AB58CE3AC71620D /* LineAttachment.swift in Sources */,
 				4F518FDF2EC3091CD02B9B518E1711E8 /* LineAttachmentToElementConverter.swift in Sources */,
 				3D9078AE88D1E712A594CF497AFBD102 /* LinkFormatter.swift in Sources */,
+				051232F6244D7C83001371FE /* HLMention+Display.swift in Sources */,
 				7AA6CC3C9C6DFCF1575F754997CCDE3C /* MainAttributesConverter.swift in Sources */,
 				F1881BAE45CA7DC1A1096CDC00C83CD9 /* MediaAttachment.swift in Sources */,
 				A5469E544A8C75986859FDF965DFBFFC /* Metrics.swift in Sources */,
@@ -1351,7 +1446,9 @@
 				3113570D8C4B021B5C197A6170403CA1 /* NSAttributedString+Lists.swift in Sources */,
 				525A31981716608746751C25169ECC76 /* NSAttributedString+ParagraphRange.swift in Sources */,
 				4AE3FBEE8716462E0D1A059817A0F083 /* NSAttributedString+ReplaceOcurrences.swift in Sources */,
+				05123305244D7C83001371FE /* HLMentionTableViewCell.swift in Sources */,
 				7E0A401B76D9505206323D6CEA835B70 /* NSAttributedStringKey+Aztec.swift in Sources */,
+				0512330B244D7C83001371FE /* HLMention+UITableView.swift in Sources */,
 				D33089F16BE710F05E190208B1A1F737 /* NSAttributedStringKey+Conversion.swift in Sources */,
 				AF44F413075CAC931B6F40EE8D55C66E /* NSBundle+AztecBundle.swift in Sources */,
 				4639DF5029F6C87BA3BE980BC7534E48 /* NSLayoutManager+Attachments.swift in Sources */,
@@ -1375,6 +1472,7 @@
 				648B4A57327D3EAD10B00ABE12D07039 /* RenderableAttachment.swift in Sources */,
 				82D1D36ADFDA5F6CE2F3083067478F21 /* ShortcodeAttribute.swift in Sources */,
 				E425A4E53ED5E442D0359E3865C5D3D2 /* ShortcodeAttributeParser.swift in Sources */,
+				051232FF244D7C83001371FE /* HLMention+UITextView.swift in Sources */,
 				2314A853EAAEC70C36FD7EBB50C107B5 /* ShortcodeAttributeSerializer.swift in Sources */,
 				4E6C5598D07DEB099CA55031BCF208DB /* StandardAttributeFormatter.swift in Sources */,
 				D63121D5118FCFBC7D016A0FFB4362D7 /* StrikethroughFormatter.swift in Sources */,
@@ -1386,6 +1484,7 @@
 				9B502B64098F66EEC9D00FE06878B252 /* StringAttributeConverter.swift in Sources */,
 				568827949BD951C885D1F7F33416022C /* StringUTF16+RangeConversion.swift in Sources */,
 				33FBA17E481D589E0013ADF5CC6D78EA /* TextList.swift in Sources */,
+				051232FC244D7C83001371FE /* HLMentionInfo.swift in Sources */,
 				45274FF99560D6381265639F795B40D3 /* TextListFormatter.swift in Sources */,
 				B3BE14F6E653B319E05EDEFCACD728F6 /* TextNode.swift in Sources */,
 				F908D447A9D041C118D13322DE29E4CD /* TextStorage.swift in Sources */,
@@ -1416,12 +1515,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05123300244D7C83001371FE /* HLMention+UITextView.swift in Sources */,
 				7528BF99BE85AB740ED1B90B404C2667 /* AutoPProcessor.swift in Sources */,
 				8272FBBDC4BF099380B0A60277C80A27 /* CaptionShortcodeInputProcessor.swift in Sources */,
 				2A28C83BC0525D6CFD6D23043E9292C7 /* CaptionShortcodeOutputProcessor.swift in Sources */,
 				A669CC9C8383EE8B6EF4CE77D211E845 /* CommentNode+Gutenberg.swift in Sources */,
+				051232FA244D7C83001371FE /* HLMentionSearchInfo.swift in Sources */,
 				3B7C177DF3F9E06F31FAB701DFB9FA2C /* EmbedURLProcessor.swift in Sources */,
 				7B4CDBD819755A030A384DE8D442D777 /* GalleryAttachment.swift in Sources */,
+				05123306244D7C83001371FE /* HLMentionTableViewCell.swift in Sources */,
 				B445524D7374E930D5A658A0292A68A1 /* GalleryAttachmentToElementConverter.swift in Sources */,
 				24E957F8CF5F9FECEB23AF0E5AA456A6 /* GalleryElementConverter.swift in Sources */,
 				DED280F7022F2C47A5658E44A05B314E /* GalleryElementToTagConverter.swift in Sources */,
@@ -1430,16 +1532,22 @@
 				62C0230DBB85EA5E2F7CD49DD9B95976 /* GutenbergAttributeDecoder.swift in Sources */,
 				DD06AEC109841C786109AD1095217430 /* GutenbergAttributeEncoder.swift in Sources */,
 				09A22E02142F62D30D9E67A8F3882C64 /* GutenbergAttributeNames.swift in Sources */,
+				051232FD244D7C83001371FE /* HLMentionInfo.swift in Sources */,
 				1E538BE2B69A77EB834B804431A51BFF /* GutenbergInputHTMLTreeProcessor.swift in Sources */,
 				7EE6B9BC53F6EE7643BF753EFE0D38AC /* GutenbergOutputHTMLTreeProcessor.swift in Sources */,
 				59B56E89D2BF7188D4B2FAAADB7F1D4B /* Gutenblock.swift in Sources */,
 				2C9603AE70C02EE39B493D67D3D10946 /* GutenblockConverter.swift in Sources */,
 				C63FF9BBB5FBD3192445AFA3CDDE3F57 /* GutenpackAttachment.swift in Sources */,
 				4F3AC1CDF9FBE4692D8D3615A9FE7899 /* GutenpackAttachmentRenderer.swift in Sources */,
+				05123312244D7C83001371FE /* HLMention+String.swift in Sources */,
 				6DD11CCCFFD92F7047117AB716A23201 /* GutenpackAttachmentToElementConverter.swift in Sources */,
+				0512330F244D7C83001371FE /* HLInstant.swift in Sources */,
 				3BBF5EE56A52A5B5DE123D09D3DA93DC /* GutenpackConverter.swift in Sources */,
+				051232F7244D7C83001371FE /* HLMention+Display.swift in Sources */,
+				05123303244D7C83001371FE /* HLMentionsTextView.swift in Sources */,
 				60030EA04A39A89BD9F919B325B2B041 /* ImageAttachment+WordPress.swift in Sources */,
 				2EDEDC321CA2ADED4E3B1F68D7860839 /* MediaAttachment+WordPress.swift in Sources */,
+				0512330C244D7C83001371FE /* HLMention+UITableView.swift in Sources */,
 				8A32481B55FDAF4FEEACEC7863994A07 /* OptionsTablePresenter.swift in Sources */,
 				4151B9578135CDB46A1FC700B5381218 /* OptionsTableViewController.swift in Sources */,
 				7AA7D8F2B66B1D5AC41FFBFD32C24D64 /* RemovePProcessor.swift in Sources */,
@@ -1447,6 +1555,7 @@
 				3D2B33B63EE83D6004DAEF1E24C1CE28 /* SpecialTagAttachmentRenderer.swift in Sources */,
 				2AAE275AE46ACE5F5FF584B30DD258BE /* String+RegEx.swift in Sources */,
 				AD3A481FF0CD6B45D346B1963C0DB94F /* VideoAttachment+WordPress.swift in Sources */,
+				051232F4244D7C83001371FE /* HLMention+NSMutableAttributedString.swift in Sources */,
 				50F06D0AF8DC933AE463930E09456E5E /* VideoShortcodeProcessor.swift in Sources */,
 				85E7BB28A56E23FADCA7E16A442A8240 /* WordPress-Editor-iOS-dummy.m in Sources */,
 				1A4D0062EFB44EBD080F23715B265CCE /* WordPressInputCustomizer.swift in Sources */,

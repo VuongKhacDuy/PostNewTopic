@@ -151,7 +151,7 @@ public protocol TextViewPasteboardDelegate: class {
 
 // MARK: - TextView
 //
-open class TextView: UITextView {
+public class TextView: HLMentionsTextView {
 
     // MARK: - Aztec Delegates
 

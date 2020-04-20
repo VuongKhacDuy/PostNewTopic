@@ -22,17 +22,6 @@
 		05403B972446C97F00671C6D /* tagUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05403B962446C97F00671C6D /* tagUserView.xib */; };
 		05403B9D2446EF0000671C6D /* TagUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403B9C2446EF0000671C6D /* TagUser.swift */; };
 		05403B9F24480F3100671C6D /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403B9E24480F3100671C6D /* ViewController+Extension.swift */; };
-		05403BAE244810F700671C6D /* HLMentionSearchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403BA1244810F700671C6D /* HLMentionSearchInfo.swift */; };
-		05403BAF244810F700671C6D /* HLMention+NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403BA2244810F700671C6D /* HLMention+NSMutableAttributedString.swift */; };
-		05403BB0244810F700671C6D /* HLMention+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403BA3244810F700671C6D /* HLMention+Display.swift */; };
-		05403BB1244810F700671C6D /* HLMentionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403BA5244810F700671C6D /* HLMentionInfo.swift */; };
-		05403BB2244810F700671C6D /* HLMention+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403BA6244810F700671C6D /* HLMention+UITextView.swift */; };
-		05403BB3244810F700671C6D /* HLMentionsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403BA7244810F700671C6D /* HLMentionsTextView.swift */; };
-		05403BB4244810F700671C6D /* HLMentionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403BA9244810F700671C6D /* HLMentionTableViewCell.swift */; };
-		05403BB5244810F700671C6D /* HLMentionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05403BAA244810F700671C6D /* HLMentionTableViewCell.xib */; };
-		05403BB6244810F700671C6D /* HLMention+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403BAB244810F700671C6D /* HLMention+UITableView.swift */; };
-		05403BB7244810F700671C6D /* HLInstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403BAC244810F700671C6D /* HLInstant.swift */; };
-		05403BB8244810F700671C6D /* HLMention+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05403BAD244810F700671C6D /* HLMention+String.swift */; };
 		AB9C16F5CA3D1164FA436883 /* Pods_CustomEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F82A5FC546C75C897FD91C2 /* Pods_CustomEditor.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,17 +44,6 @@
 		05403B962446C97F00671C6D /* tagUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tagUserView.xib; sourceTree = "<group>"; };
 		05403B9C2446EF0000671C6D /* TagUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUser.swift; sourceTree = "<group>"; };
 		05403B9E24480F3100671C6D /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
-		05403BA1244810F700671C6D /* HLMentionSearchInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionSearchInfo.swift; sourceTree = "<group>"; };
-		05403BA2244810F700671C6D /* HLMention+NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+NSMutableAttributedString.swift"; sourceTree = "<group>"; };
-		05403BA3244810F700671C6D /* HLMention+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+Display.swift"; sourceTree = "<group>"; };
-		05403BA5244810F700671C6D /* HLMentionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionInfo.swift; sourceTree = "<group>"; };
-		05403BA6244810F700671C6D /* HLMention+UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+UITextView.swift"; sourceTree = "<group>"; };
-		05403BA7244810F700671C6D /* HLMentionsTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionsTextView.swift; sourceTree = "<group>"; };
-		05403BA9244810F700671C6D /* HLMentionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionTableViewCell.swift; sourceTree = "<group>"; };
-		05403BAA244810F700671C6D /* HLMentionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLMentionTableViewCell.xib; sourceTree = "<group>"; };
-		05403BAB244810F700671C6D /* HLMention+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+UITableView.swift"; sourceTree = "<group>"; };
-		05403BAC244810F700671C6D /* HLInstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLInstant.swift; sourceTree = "<group>"; };
-		05403BAD244810F700671C6D /* HLMention+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+String.swift"; sourceTree = "<group>"; };
 		1F82A5FC546C75C897FD91C2 /* Pods_CustomEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C1E4CE9DE700B90AF8FF01 /* Pods-CustomEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomEditor.release.xcconfig"; path = "Target Support Files/Pods-CustomEditor/Pods-CustomEditor.release.xcconfig"; sourceTree = "<group>"; };
 		B42F932B519A251758124506 /* Pods-CustomEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomEditor.debug.xcconfig"; path = "Target Support Files/Pods-CustomEditor/Pods-CustomEditor.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,7 +82,6 @@
 		051CDD792440327000C536DD /* CustomEditor */ = {
 			isa = PBXGroup;
 			children = (
-				05403BA0244810F700671C6D /* HLMention */,
 				05403B952446C96D00671C6D /* tagUser */,
 				052AB108244599AB003F1F90 /* Gridicons */,
 				051CDD7A2440327000C536DD /* AppDelegate.swift */,
@@ -140,40 +117,6 @@
 				05403B9C2446EF0000671C6D /* TagUser.swift */,
 			);
 			path = tagUser;
-			sourceTree = "<group>";
-		};
-		05403BA0244810F700671C6D /* HLMention */ = {
-			isa = PBXGroup;
-			children = (
-				05403BA1244810F700671C6D /* HLMentionSearchInfo.swift */,
-				05403BA2244810F700671C6D /* HLMention+NSMutableAttributedString.swift */,
-				05403BA3244810F700671C6D /* HLMention+Display.swift */,
-				05403BA4244810F700671C6D /* HLMentionInfo */,
-				05403BA6244810F700671C6D /* HLMention+UITextView.swift */,
-				05403BA7244810F700671C6D /* HLMentionsTextView.swift */,
-				05403BA8244810F700671C6D /* HLMentionTableView */,
-				05403BAB244810F700671C6D /* HLMention+UITableView.swift */,
-				05403BAC244810F700671C6D /* HLInstant.swift */,
-				05403BAD244810F700671C6D /* HLMention+String.swift */,
-			);
-			path = HLMention;
-			sourceTree = "<group>";
-		};
-		05403BA4244810F700671C6D /* HLMentionInfo */ = {
-			isa = PBXGroup;
-			children = (
-				05403BA5244810F700671C6D /* HLMentionInfo.swift */,
-			);
-			path = HLMentionInfo;
-			sourceTree = "<group>";
-		};
-		05403BA8244810F700671C6D /* HLMentionTableView */ = {
-			isa = PBXGroup;
-			children = (
-				05403BA9244810F700671C6D /* HLMentionTableViewCell.swift */,
-				05403BAA244810F700671C6D /* HLMentionTableViewCell.xib */,
-			);
-			path = HLMentionTableView;
 			sourceTree = "<group>";
 		};
 		17F3BDF1CFA31917A507950E /* Pods */ = {
@@ -257,7 +200,6 @@
 				052AB110244599AB003F1F90 /* Gridicons.xcassets in Resources */,
 				05403B972446C97F00671C6D /* tagUserView.xib in Resources */,
 				051CDD872440327100C536DD /* LaunchScreen.storyboard in Resources */,
-				05403BB5244810F700671C6D /* HLMentionTableViewCell.xib in Resources */,
 				05403B9424469CB700671C6D /* tag-user.png in Resources */,
 				051CDD842440327100C536DD /* Assets.xcassets in Resources */,
 				051CDD822440327000C536DD /* Main.storyboard in Resources */,
@@ -313,24 +255,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05403BB6244810F700671C6D /* HLMention+UITableView.swift in Sources */,
 				05403B9F24480F3100671C6D /* ViewController+Extension.swift in Sources */,
-				05403BB0244810F700671C6D /* HLMention+Display.swift in Sources */,
 				052AB10F244599AB003F1F90 /* Gridicons.swift in Sources */,
 				051CDD7F2440327000C536DD /* ViewController.swift in Sources */,
-				05403BB1244810F700671C6D /* HLMentionInfo.swift in Sources */,
 				0518425C244552DE0071B038 /* EditorDemoController.swift in Sources */,
 				051CDD7B2440327000C536DD /* AppDelegate.swift in Sources */,
-				05403BB2244810F700671C6D /* HLMention+UITextView.swift in Sources */,
-				05403BB3244810F700671C6D /* HLMentionsTextView.swift in Sources */,
-				05403BAE244810F700671C6D /* HLMentionSearchInfo.swift in Sources */,
-				05403BB8244810F700671C6D /* HLMention+String.swift in Sources */,
 				052AB10E244599AB003F1F90 /* GridiconsGenerated.swift in Sources */,
-				05403BAF244810F700671C6D /* HLMention+NSMutableAttributedString.swift in Sources */,
 				051CDD7D2440327000C536DD /* SceneDelegate.swift in Sources */,
-				05403BB4244810F700671C6D /* HLMentionTableViewCell.swift in Sources */,
 				05403B9D2446EF0000671C6D /* TagUser.swift in Sources */,
-				05403BB7244810F700671C6D /* HLInstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
