@@ -1,6 +1,0 @@
-framework module Pods_CustomEditor {
-  umbrella header "Pods-CustomEditor-umbrella.h"
-
-  export *
-  module * { export * }
-}
