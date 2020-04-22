@@ -590,7 +590,8 @@
 				05123321244D875D001371FE /* HLMention+UITableView.swift */,
 				05123317244D875D001371FE /* HLMention+NSMutableAttributedString.swift */,
 			);
-			path = HLMention;
+			name = HLMention;
+			path = ../../../Example/Example/HLMention;
 			sourceTree = "<group>";
 		};
 		05123319244D875D001371FE /* HLMentionInfo */ = {

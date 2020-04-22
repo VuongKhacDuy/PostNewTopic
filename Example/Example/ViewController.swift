@@ -38,7 +38,7 @@ class ViewController: UITableViewController
     // MARK: Actions
 
     func showEditorDemo(filename: String? = nil, wordPressMode: Bool = false) {
-        let controller: EditorDemoController
+        var controller: EditorDemoController
             
         if let filename = filename {
             let sampleHTML = getSampleHTML(fromHTMLFileNamed: filename)
@@ -47,6 +47,8 @@ class ViewController: UITableViewController
         } else {
             controller = EditorDemoController(wordPressMode: wordPressMode)
         }
+        
+        controller = self.storyboard?.instantiateViewController(withIdentifier: "EditorDemoController") as! EditorDemoController
         
         navigationController?.pushViewController(controller, animated: true)
     }

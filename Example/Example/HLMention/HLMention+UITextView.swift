@@ -75,6 +75,7 @@ extension UITextView {
         return self.offset(from: self.beginningOfDocument, to: wordStartPosition)
     }
     
+    // func current words which are selected
     func currentWord() -> String {
         guard let cursorRange = self.selectedTextRange else { return "" }
 

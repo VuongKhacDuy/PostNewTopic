@@ -10,6 +10,8 @@
 		0504456B244EAC7A001F3BD7 /* GridiconsGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05044563244EAC7A001F3BD7 /* GridiconsGenerated.swift */; };
 		0504456C244EAC7A001F3BD7 /* Gridicons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05044565244EAC7A001F3BD7 /* Gridicons.swift */; };
 		0504456D244EAC7A001F3BD7 /* Gridicons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05044566244EAC7A001F3BD7 /* Gridicons.xcassets */; };
+		0520A7E1244FE7E600D70683 /* ExperienceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0520A7E0244FE7E600D70683 /* ExperienceView.xib */; };
+		0520A7E3244FEAE900D70683 /* ExperienceTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520A7E2244FEAE900D70683 /* ExperienceTopicView.swift */; };
 		59280F2A1D47CAF40083FB59 /* content.html in Resources */ = {isa = PBXBuildFile; fileRef = 59280F281D47CAF40083FB59 /* content.html */; };
 		59280F2B1D47CAF40083FB59 /* SampleText.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 59280F291D47CAF40083FB59 /* SampleText.rtf */; };
 		592D62C91D8DF5590013EFF7 /* Aztec.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 599F25771D8BD045002871D6 /* Aztec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -132,6 +134,19 @@
 		05044564244EAC7A001F3BD7 /* Gridicons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gridicons.h; sourceTree = "<group>"; };
 		05044565244EAC7A001F3BD7 /* Gridicons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gridicons.swift; sourceTree = "<group>"; };
 		05044566244EAC7A001F3BD7 /* Gridicons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Gridicons.xcassets; sourceTree = "<group>"; };
+		0504458B244ED9AA001F3BD7 /* HLMentionSearchInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionSearchInfo.swift; sourceTree = "<group>"; };
+		0504458C244ED9AA001F3BD7 /* HLMentionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionInfo.swift; sourceTree = "<group>"; };
+		0504458E244ED9AA001F3BD7 /* HLMentionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionTableViewCell.swift; sourceTree = "<group>"; };
+		0504458F244ED9AA001F3BD7 /* HLMentionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLMentionTableViewCell.xib; sourceTree = "<group>"; };
+		05044591244ED9AA001F3BD7 /* HLInstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLInstant.swift; sourceTree = "<group>"; };
+		05044592244ED9AA001F3BD7 /* HLMentionsTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLMentionsTextView.swift; sourceTree = "<group>"; };
+		05044593244ED9AA001F3BD7 /* HLMention+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+Display.swift"; sourceTree = "<group>"; };
+		05044594244ED9AA001F3BD7 /* HLMention+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+String.swift"; sourceTree = "<group>"; };
+		05044595244ED9AA001F3BD7 /* HLMention+UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+UITextView.swift"; sourceTree = "<group>"; };
+		05044596244ED9AA001F3BD7 /* HLMention+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+UITableView.swift"; sourceTree = "<group>"; };
+		05044597244ED9AA001F3BD7 /* HLMention+NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLMention+NSMutableAttributedString.swift"; sourceTree = "<group>"; };
+		0520A7E0244FE7E600D70683 /* ExperienceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceView.xib; sourceTree = "<group>"; };
+		0520A7E2244FEAE900D70683 /* ExperienceTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTopicView.swift; sourceTree = "<group>"; };
 		59280F281D47CAF40083FB59 /* content.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = content.html; sourceTree = "<group>"; };
 		59280F291D47CAF40083FB59 /* SampleText.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = SampleText.rtf; sourceTree = "<group>"; };
 		599F256F1D8BCF57002871D6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +230,49 @@
 			path = Gridicons;
 			sourceTree = "<group>";
 		};
+		0504458D244ED9AA001F3BD7 /* HLMentionInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0504458B244ED9AA001F3BD7 /* HLMentionSearchInfo.swift */,
+				0504458C244ED9AA001F3BD7 /* HLMentionInfo.swift */,
+			);
+			path = HLMentionInfo;
+			sourceTree = "<group>";
+		};
+		05044590244ED9AA001F3BD7 /* HLMentionTableView */ = {
+			isa = PBXGroup;
+			children = (
+				0504458E244ED9AA001F3BD7 /* HLMentionTableViewCell.swift */,
+				0504458F244ED9AA001F3BD7 /* HLMentionTableViewCell.xib */,
+			);
+			path = HLMentionTableView;
+			sourceTree = "<group>";
+		};
+		05044598244ED9AA001F3BD7 /* HLMention */ = {
+			isa = PBXGroup;
+			children = (
+				0504458D244ED9AA001F3BD7 /* HLMentionInfo */,
+				05044590244ED9AA001F3BD7 /* HLMentionTableView */,
+				05044591244ED9AA001F3BD7 /* HLInstant.swift */,
+				05044592244ED9AA001F3BD7 /* HLMentionsTextView.swift */,
+				05044593244ED9AA001F3BD7 /* HLMention+Display.swift */,
+				05044594244ED9AA001F3BD7 /* HLMention+String.swift */,
+				05044595244ED9AA001F3BD7 /* HLMention+UITextView.swift */,
+				05044596244ED9AA001F3BD7 /* HLMention+UITableView.swift */,
+				05044597244ED9AA001F3BD7 /* HLMention+NSMutableAttributedString.swift */,
+			);
+			path = HLMention;
+			sourceTree = "<group>";
+		};
+		0520A7DC244FE7B700D70683 /* ExperienceTopic */ = {
+			isa = PBXGroup;
+			children = (
+				0520A7E0244FE7E600D70683 /* ExperienceView.xib */,
+				0520A7E2244FEAE900D70683 /* ExperienceTopicView.swift */,
+			);
+			path = ExperienceTopic;
+			sourceTree = "<group>";
+		};
 		59280F271D47CAF40083FB59 /* SampleContent */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +332,8 @@
 		607FACD21AFB9204008FA782 /* Example for WordPress-Aztec-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0520A7DC244FE7B700D70683 /* ExperienceTopic */,
+				05044598244ED9AA001F3BD7 /* HLMention */,
 				05044562244EAC7A001F3BD7 /* Gridicons */,
 				599F256F1D8BCF57002871D6 /* AppDelegate.swift */,
 				59D287391D8C599B00B99C80 /* AttachmentDetailsViewController.swift */,
@@ -484,6 +544,7 @@
 				FF149F4A20E3C49A0070FECB /* imagesOverlays.html in Resources */,
 				FF1FEC7E2406E071006221AA /* underline.html in Resources */,
 				FFC41BDE20DBC7BA004DFB4D /* video.html in Resources */,
+				0520A7E1244FE7E600D70683 /* ExperienceView.xib in Resources */,
 				FF9AF5481DB0E4E200C42ED3 /* AttachmentDetailsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +567,7 @@
 				FFFA53D023C4A64200829A43 /* MediaInserter.swift in Sources */,
 				B5DB1C371EC630E10005E623 /* UnknownEditorViewController.swift in Sources */,
 				FFFA53D523C4AD0B00829A43 /* TextViewAttachmentDelegateProvider.swift in Sources */,
+				0520A7E3244FEAE900D70683 /* ExperienceTopicView.swift in Sources */,
 				599F25701D8BCF57002871D6 /* AppDelegate.swift in Sources */,
 				59D2873B1D8C599B00B99C80 /* AttachmentDetailsViewController.swift in Sources */,
 				FFFA53D723C4C43700829A43 /* UIImage+SaveTo.swift in Sources */,

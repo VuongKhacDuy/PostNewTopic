@@ -8,6 +8,8 @@ import WordPressEditor
 
 class EditorDemoController: UIViewController {    
 
+    @IBOutlet weak var ImageCover: ExperienceTopicView!
+    
     fileprivate(set) lazy var formatBar: Aztec.FormatBar = {
         return self.createToolbar()
     }()
@@ -23,18 +25,18 @@ class EditorDemoController: UIViewController {
             return editorView.htmlTextView
         }
     }
-
+    
     fileprivate(set) lazy var mediaInserter: MediaInserter = {
         return MediaInserter(textView: self.richTextView, attachmentTextAttributes: Constants.mediaMessageAttributes)
     }()
-
+    
     fileprivate(set) lazy var textViewAttachmentDelegate: TextViewAttachmentDelegate = {
         return TextViewAttachmentDelegateProvider(baseController: self, attachmentTextAttributes: Constants.mediaMessageAttributes)
     }()
     
     fileprivate(set) lazy var editorView: Aztec.EditorView = {
         let defaultHTMLFont: UIFont
-
+        
         defaultHTMLFont = UIFontMetrics.default.scaledFont(for: Constants.defaultContentFont)
         
         let editorView = Aztec.EditorView(
@@ -42,7 +44,7 @@ class EditorDemoController: UIViewController {
             defaultHTMLFont: defaultHTMLFont,
             defaultParagraphStyle: .default,
             defaultMissingImage: Constants.defaultMissingImage)
-
+        
         editorView.clipsToBounds = false
         setupHTMLTextView(editorView.htmlTextView)
         setupRichTextView(editorView.richTextView)
@@ -68,8 +70,8 @@ class EditorDemoController: UIViewController {
         textView.hlDelegate = self
         
         let kMentionInfos: [HLMentionInfo] = [HLMentionInfo("00", "Hoa"), HLMentionInfo("01", "Vuong Khac Duy"), HLMentionInfo("02", "Dương"),
-        HLMentionInfo("03", "Nguyễn Đoàn Nguyên An"), HLMentionInfo("04", "Nguyễn Kiều Vy"), HLMentionInfo("05", "Nguyễn Duy Ngân"),
-        HLMentionInfo("06", "Donald Trump"), HLMentionInfo("07", "Hoà cute phô mai que")]
+                                              HLMentionInfo("03", "Nguyễn Đoàn Nguyên An"), HLMentionInfo("04", "Nguyễn Kiều Vy"), HLMentionInfo("05", "Nguyễn Duy Ngân"),
+                                              HLMentionInfo("06", "Donald Trump"), HLMentionInfo("07", "Hoà cute phô mai que")]
         textView.kListMentionInfos = kMentionInfos
     }
     
@@ -84,11 +86,17 @@ class EditorDemoController: UIViewController {
         textView.autocapitalizationType = .none
         textView.clipsToBounds = false
         textView.adjustsFontForContentSizeCategory = true
-
+        
         textView.smartDashesType = .no
         textView.smartQuotesType = .no
     }
-
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    fileprivate(set) lazy var coverImgaeExperience: UIView = {
+//        let coverImageView = ExperienceTopicView()
+//        return coverImageView
+//    }()
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     fileprivate(set) lazy var titleTextView: UITextView = {
         let textView = UITextView()
         
@@ -101,47 +109,47 @@ class EditorDemoController: UIViewController {
         textView.backgroundColor = .clear
         textView.textAlignment = .natural
         textView.isScrollEnabled = false
-
+        
         return textView
     }()
-
+    
     /// Placeholder Label
     ///
     fileprivate(set) lazy var titlePlaceholderLabel: UILabel = {
         let placeholderText = NSLocalizedString("Enter title here", comment: "Post title placeholder")
         let titlePlaceholderLabel = UILabel()
-
+        
         let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.lightGray, .font: UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)]
-
+        
         titlePlaceholderLabel.attributedText = NSAttributedString(string: placeholderText, attributes: attributes)
         titlePlaceholderLabel.sizeToFit()
         titlePlaceholderLabel.translatesAutoresizingMaskIntoConstraints = false
         titlePlaceholderLabel.textAlignment = .natural
-
+        
         return titlePlaceholderLabel
     }()
-
+    
     fileprivate var titleHeightConstraint: NSLayoutConstraint!
     fileprivate var titleTopConstraint: NSLayoutConstraint!
     fileprivate var titlePlaceholderTopConstraint: NSLayoutConstraint!
     fileprivate var titlePlaceholderLeadingConstraint: NSLayoutConstraint!
-
+    
     fileprivate(set) lazy var separatorView: UIView = {
         let separatorView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: 1))
-
+        
         separatorView.backgroundColor = UIColor.darkText
         separatorView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         return separatorView
     }()    
-
+    
     let sampleHTML: String?
     let wordPressMode: Bool
-
+    
     private lazy var optionsTablePresenter = OptionsTablePresenter(presentingViewController: self, presentingTextView: richTextView)
-
+    
     // MARK: - Lifecycle Methods
-
+    
     init(withSampleHTML sampleHTML: String? = nil, wordPressMode: Bool) {
         
         self.sampleHTML = sampleHTML
@@ -160,11 +168,11 @@ class EditorDemoController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         MediaAttachment.defaultAppearance.progressColor = UIColor.blue
         MediaAttachment.defaultAppearance.progressBackgroundColor = UIColor.lightGray
         MediaAttachment.defaultAppearance.progressHeight = 2.0
@@ -172,14 +180,18 @@ class EditorDemoController: UIViewController {
         // Uncomment to add a border
         // MediaAttachment.defaultAppearance.overlayBorderWidth = 3.0
         // MediaAttachment.defaultAppearance.overlayBorderColor = UIColor(red: CGFloat(0.0/255.0), green: CGFloat(135.0/255.0), blue: CGFloat(190.0/255.0), alpha: 0.8)
-
+        
         edgesForExtendedLayout = UIRectEdge()
         navigationController?.navigationBar.isTranslucent = false
         view.addSubview(editorView)
         view.addSubview(titleTextView)
         view.addSubview(titlePlaceholderLabel)
         view.addSubview(separatorView)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//        view.addSubview(coverImgaeExperience)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        
         editorView.richTextView.textContainer.lineFragmentPadding = 0
         // color setup
         if #available(iOS 13.0, *) {
@@ -199,9 +211,9 @@ class EditorDemoController: UIViewController {
         editorView.isScrollEnabled = false
         configureConstraints()
         registerAttachmentImageProviders()
-
+        
         let html: String
-
+        
         if let sampleHTML = sampleHTML {
             html = sampleHTML
         } else {
@@ -211,40 +223,40 @@ class EditorDemoController: UIViewController {
         editorView.setHTML(html)
         editorView.becomeFirstResponder()
     }
-
+    
     @objc func changeFont() {
         editorView.richTextView.defaultFont = UIFont.preferredFont(forTextStyle: .callout)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         nc.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //Reanable scroll after setup is done
         editorView.isScrollEnabled = true
     }
-
-
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
         let nc = NotificationCenter.default
         nc.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         nc.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
-
+    
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         optionsTablePresenter.dismiss()
     }
-
+    
     // MARK: - Title and Title placeholder position methods
     func updateTitlePosition() {
         titleTopConstraint.constant = -(editorView.contentOffset.y + editorView.contentInset.top)
@@ -257,84 +269,105 @@ class EditorDemoController: UIViewController {
         
         updateScrollInsets()
     }
-
+    
     func updateScrollInsets() {
         var scrollInsets = editorView.contentInset
         var rightMargin = (view.frame.maxX - editorView.frame.maxX)
         rightMargin -= view.safeAreaInsets.right
-
+        
         scrollInsets.right = -rightMargin
         editorView.scrollIndicatorInsets = scrollInsets
     }
-
+    
     func updateTitleHeight() {
         let layoutMargins = view.layoutMargins
         let insets = titleTextView.textContainerInset
-
+        
         var titleWidth = titleTextView.bounds.width
         if titleWidth <= 0 {
             // Use the title text field's width if available, otherwise calculate it.
             titleWidth = view.frame.width - (insets.left + insets.right + layoutMargins.left + layoutMargins.right)
         }
-
+        
         let sizeThatShouldFitTheContent = titleTextView.sizeThatFits(CGSize(width: titleWidth, height: CGFloat.greatestFiniteMagnitude))
         titleHeightConstraint.constant = max(sizeThatShouldFitTheContent.height, titleTextView.font!.lineHeight + insets.top + insets.bottom)
-
+        
         titlePlaceholderLabel.isHidden = !titleTextView.text.isEmpty
-
+        
         var contentInset = editorView.contentInset
         contentInset.top = (titleHeightConstraint.constant + separatorView.frame.height)
         editorView.contentInset = contentInset
         editorView.contentOffset = CGPoint(x: 0, y: -contentInset.top)
     }
-
+    
     // MARK: - Configuration Methods
     override func updateViewConstraints() {
         updateTitlePosition()
         updateTitleHeight()
         super.updateViewConstraints()
     }
-
+    
     private func configureConstraints() {
+        
+        let layoutGuide = view.readableContentGuide
+        
 
+                // set layout for cover image of topic experience
+//                NSLayoutConstraint.activate([
+//                    coverImgaeExperience.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//        //            coverImgaeExperience.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),
+//                    coverImgaeExperience.topAnchor.constraint(equalTo: view.topAnchor,constant: 0),
+////                    coverImgaeExperience.widthAnchor.constraint(equalToConstant: 100),
+//                    coverImgaeExperience.heightAnchor.constraint(equalToConstant: 100),
+//
+//                    coverImgaeExperience.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: 0)
+                    
+        //            coverImgaeExperience.heightAnchor
+        //            let widthConstraint = NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 100)
+        //            let heightConstraint = NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 100)
+//                ])
+        ImageCover.translatesAutoresizingMaskIntoConstraints = false
         titleHeightConstraint = titleTextView.heightAnchor.constraint(equalToConstant: ceil(titleTextView.font!.lineHeight))
-        titleTopConstraint = titleTextView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0)
+        titleTopConstraint = titleTextView.topAnchor.constraint(equalTo: ImageCover.bottomAnchor, constant: 0)
         titlePlaceholderTopConstraint = titlePlaceholderLabel.topAnchor.constraint(equalTo: titleTextView.topAnchor, constant:0)
         titlePlaceholderLeadingConstraint = titlePlaceholderLabel.leadingAnchor.constraint(equalTo: titleTextView.leadingAnchor, constant: 0)
         updateTitlePosition()
         updateTitleHeight()
-
-        let layoutGuide = view.readableContentGuide
-
+        
+        
         NSLayoutConstraint.activate([
             titleTextView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 0),
             titleTextView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0),
             titleHeightConstraint,
             titleTopConstraint
-            ])
-
+        ])
+        
         NSLayoutConstraint.activate([
             titlePlaceholderLeadingConstraint,
             titlePlaceholderLabel.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0),
             titlePlaceholderTopConstraint
-            ])
-
+        ])
+        
         NSLayoutConstraint.activate([
             separatorView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 0),
             separatorView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0),
             separatorView.topAnchor.constraint(equalTo: titleTextView.bottomAnchor, constant: 0),
             separatorView.heightAnchor.constraint(equalToConstant: separatorView.frame.height)
-            ])
-
+        ])
+        
         NSLayoutConstraint.activate([
             editorView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
             editorView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),
-            editorView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            editorView.topAnchor.constraint(equalTo: ImageCover.bottomAnchor, constant: 0),
             editorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-            ])
+        ])
+        
+        
+//        coverImgaeExperience.layoutIfNeeded()
+        self.view.layoutIfNeeded()
     }
-
-
+    
+    
     private func configureDefaultProperties(for textView: TextView, accessibilityLabel: String) {
         textView.accessibilityLabel = accessibilityLabel
         textView.font = Constants.defaultContentFont
@@ -349,7 +382,7 @@ class EditorDemoController: UIViewController {
         }
         textView.linkTextAttributes = [.foregroundColor: UIColor(red: 0x01 / 255.0, green: 0x60 / 255.0, blue: 0x87 / 255.0, alpha: 1), NSAttributedString.Key.underlineStyle: NSNumber(value: NSUnderlineStyle.single.rawValue)]
     }
-
+    
     private func configureDefaultProperties(htmlTextView textView: UITextView, accessibilityLabel: String) {
         textView.accessibilityLabel = accessibilityLabel
         textView.font = Constants.defaultContentFont
@@ -365,7 +398,7 @@ class EditorDemoController: UIViewController {
         }
         textView.linkTextAttributes = [.foregroundColor: UIColor(red: 0x01 / 255.0, green: 0x60 / 255.0, blue: 0x87 / 255.0, alpha: 1), NSAttributedString.Key.underlineStyle: NSNumber(value: NSUnderlineStyle.single.rawValue)]
     }
-
+    
     private func registerAttachmentImageProviders() {
         let providers: [TextViewAttachmentImageProvider] = [
             GutenpackAttachmentRenderer(),
@@ -373,14 +406,14 @@ class EditorDemoController: UIViewController {
             CommentAttachmentRenderer(font: Constants.defaultContentFont),
             HTMLAttachmentRenderer(font: Constants.defaultHtmlFont),
         ]
-
+        
         for provider in providers {
             richTextView.registerAttachmentImageProvider(provider)
         }
     }
-
+    
     // MARK: - Helpers
-
+    
     @IBAction func toggleEditingMode() {
         formatBar.overflowToolbar(expand: true)
         editorView.toggleEditingMode()
@@ -393,28 +426,28 @@ class EditorDemoController: UIViewController {
     private func formattingIdentifierHasOptions(_ formattingIdentifier: FormattingIdentifier) -> Bool {
         return formattingIdentifiersWithOptions.contains(formattingIdentifier)
     }
-
+    
     // MARK: - Keyboard Handling
-
+    
     @objc func keyboardWillShow(_ notification: Notification) {
         guard let userInfo = notification.userInfo as? [String: AnyObject],
             let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
                 return
         }
-
+        
         refreshInsets(forKeyboardFrame: keyboardFrame)
     }
-
+    
     @objc func keyboardWillHide(_ notification: Notification) {
         guard let userInfo = notification.userInfo as? [String: AnyObject],
             let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
                 return
         }
-
+        
         refreshInsets(forKeyboardFrame: keyboardFrame)
         optionsTablePresenter.dismiss()
     }
-
+    
     fileprivate func refreshInsets(forKeyboardFrame keyboardFrame: CGRect) {
         
         // The reason why we're converting the keyboard coordinates instead of just using
@@ -430,27 +463,27 @@ class EditorDemoController: UIViewController {
             left: 0,
             bottom: keyboardInset,
             right: 0)
-
+        
         editorView.contentInset = contentInset
         updateScrollInsets()
     }
-
-
+    
+    
     func updateFormatBar() {
         guard let toolbar = richTextView.inputAccessoryView as? Aztec.FormatBar else {
             return
         }
-
+        
         let identifiers: Set<FormattingIdentifier>
         if richTextView.selectedRange.length > 0 {
             identifiers = richTextView.formattingIdentifiersSpanningRange(richTextView.selectedRange)
         } else {
             identifiers = richTextView.formattingIdentifiersForTypingAttributes()
         }
-
+        
         toolbar.selectItemsMatchingIdentifiers(identifiers.map({ $0.rawValue }))
     }
-
+    
     override var keyCommands: [UIKeyCommand] {
         if titleTextView.isFirstResponder {
             return [
@@ -476,23 +509,23 @@ class EditorDemoController: UIViewController {
         }
         return []
     }
-
-
+    
+    
     // MARK: - Sample Content
-
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if richTextView.resignFirstResponder() {
             richTextView.becomeFirstResponder()
         }
-
+        
         if htmlTextView.resignFirstResponder() {
             htmlTextView.becomeFirstResponder()
         }
-
+        
         if titleTextView.resignFirstResponder() {
             titleTextView.becomeFirstResponder()
         }
-
+        
     }
 }
 
@@ -527,7 +560,7 @@ extension EditorDemoController : UITextViewDelegate {
             break
         }
     }
-
+    
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         switch textView {
         case titleTextView:
@@ -536,22 +569,22 @@ extension EditorDemoController : UITextViewDelegate {
             formatBar.enabled = true
         case htmlTextView:
             formatBar.enabled = false
-
+            
             // Disable the bar, except for the source code button
             let htmlButton = formatBar.items.first(where: { $0.identifier == FormattingIdentifier.sourcecode.rawValue })
             htmlButton?.isEnabled = true
         default: break
         }
-
+        
         textView.inputAccessoryView = formatBar
-
+        
         return true
     }
-
+    
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         return false
     }
-
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         updateTitlePosition()
     }
@@ -565,14 +598,14 @@ extension EditorDemoController : Aztec.TextViewFormattingDelegate {
 
 
 extension EditorDemoController : UITextFieldDelegate {
-
+    
 }
 
 extension EditorDemoController {
     enum EditMode {
         case richText
         case html
-
+        
         mutating func toggle() {
             switch self {
             case .html:
@@ -589,7 +622,7 @@ extension EditorDemoController {
 extension EditorDemoController : Aztec.FormatBarDelegate {
     func formatBarTouchesBegan(_ formatBar: FormatBar) {
     }
-
+    
     func formatBar(_ formatBar: FormatBar, didChangeOverflowState state: FormatBarOverflowState) {
         switch state {
         case .hidden:
@@ -607,7 +640,7 @@ extension EditorDemoController {
             let formattingIdentifier = FormattingIdentifier(rawValue: identifier) else {
                 return
         }
-//        let formattingIdentifier = FormattingIdentifier("tagUser")
+        //        let formattingIdentifier = FormattingIdentifier("tagUser")
         if !formattingIdentifierHasOptions(formattingIdentifier) {
             optionsTablePresenter.dismiss()
         }
@@ -647,7 +680,7 @@ extension EditorDemoController {
         default:
             break
         }
-
+        
         updateFormatBar()
     }
     
@@ -663,34 +696,34 @@ extension EditorDemoController {
     @objc func toggleBold() {
         richTextView.toggleBold(range: richTextView.selectedRange)
     }
-
-
+    
+    
     @objc func toggleItalic() {
         richTextView.toggleItalic(range: richTextView.selectedRange)
     }
-
-
+    
+    
     func toggleUnderline() {
         richTextView.toggleUnderline(range: richTextView.selectedRange)
     }
-
-
+    
+    
     @objc func toggleStrikethrough() {
         richTextView.toggleStrikethrough(range: richTextView.selectedRange)
     }
-
+    
     @objc func toggleBlockquote() {
         richTextView.toggleBlockquote(range: richTextView.selectedRange)
     }
-
+    
     @objc func toggleCode() {
         richTextView.toggleCode(range: richTextView.selectedRange)
     }
-
+    
     func insertHorizontalRuler() {
         richTextView.replaceWithHorizontalRuler(at: richTextView.selectedRange)
     }
-
+    
     func toggleHeader(fromItem item: FormatBarItem) {
         guard !optionsTablePresenter.isOnScreen() else {
             optionsTablePresenter.dismiss()
@@ -701,11 +734,11 @@ extension EditorDemoController {
             let attributes: [NSAttributedString.Key: Any] = [
                 .font: UIFont.systemFont(ofSize: CGFloat(headerType.fontSize))
             ]
-
+            
             let title = NSAttributedString(string: headerType.description, attributes: attributes)
             return OptionsTableViewOption(image: headerType.iconImage, title: title)
         }
-
+        
         let selectedIndex = Constants.headers.firstIndex(of: headerLevelForSelectedText())
         let optionsTableViewController = OptionsTableViewController(options: options)
         optionsTableViewController.cellDeselectedTintColor = .gray
@@ -718,12 +751,12 @@ extension EditorDemoController {
                 guard let range = self?.richTextView.selectedRange else {
                     return
                 }
-
+                
                 self?.richTextView.toggleHeader(Constants.headers[selected], range: range)
                 self?.optionsTablePresenter.dismiss()
         })
     }
-
+    
     func toggleList(fromItem item: FormatBarItem) {
         guard !optionsTablePresenter.isOnScreen() else {
             optionsTablePresenter.dismiss()
@@ -733,7 +766,7 @@ extension EditorDemoController {
         let options = Constants.lists.map { (listType) -> OptionsTableViewOption in
             return OptionsTableViewOption(image: listType.iconImage, title: NSAttributedString(string: listType.description, attributes: [:]))
         }
-
+        
         var index: Int? = nil
         if let listType = listTypeForSelectedText() {
             index = Constants.lists.firstIndex(of: listType)
@@ -741,14 +774,14 @@ extension EditorDemoController {
         
         let optionsTableViewController = OptionsTableViewController(options: options)
         optionsTableViewController.cellDeselectedTintColor = .gray
-
+        
         optionsTablePresenter.present(
             optionsTableViewController,
             fromBarItem: item,
             selectedRowIndex: index,
             onSelect: { [weak self] selected in
                 guard let range = self?.richTextView.selectedRange else { return }
-
+                
                 let listType = Constants.lists[selected]
                 switch listType {
                 case .unordered:
@@ -760,24 +793,24 @@ extension EditorDemoController {
                 self?.optionsTablePresenter.dismiss()
         })
     }
-
+    
     @objc func toggleUnorderedList() {
         richTextView.toggleUnorderedList(range: richTextView.selectedRange)
     }
-
+    
     @objc func toggleOrderedList() {
         richTextView.toggleOrderedList(range: richTextView.selectedRange)
     }
-
+    
     func changeRichTextInputView(to: UIView?) {
         if richTextView.inputView == to {
             return
         }
-
+        
         richTextView.inputView = to
         richTextView.reloadInputViews()
     }
-
+    
     func headerLevelForSelectedText() -> Header.HeaderType {
         var identifiers = Set<FormattingIdentifier>()
         if (richTextView.selectedRange.length > 0) {
@@ -800,7 +833,7 @@ extension EditorDemoController {
         }
         return .none
     }
-
+    
     func listTypeForSelectedText() -> TextList.Style? {
         var identifiers = Set<FormattingIdentifier>()
         if (richTextView.selectedRange.length > 0) {
@@ -811,70 +844,70 @@ extension EditorDemoController {
         let mapping: [FormattingIdentifier: TextList.Style] = [
             .orderedlist : .ordered,
             .unorderedlist : .unordered
-            ]
+        ]
         for (key,value) in mapping {
             if identifiers.contains(key) {
                 return value
             }
         }
-
+        
         return nil
     }
-
+    
     @objc func toggleLink() {
         var linkTitle = ""
         var linkURL: URL? = nil
         var linkRange = richTextView.selectedRange
         // Let's check if the current range already has a link assigned to it.
         if let expandedRange = richTextView.linkFullRange(forRange: richTextView.selectedRange) {
-           linkRange = expandedRange
-           linkURL = richTextView.linkURL(forRange: expandedRange)
+            linkRange = expandedRange
+            linkURL = richTextView.linkURL(forRange: expandedRange)
         }
         let target = richTextView.linkTarget(forRange: richTextView.selectedRange)
         linkTitle = richTextView.attributedText.attributedSubstring(from: linkRange).string
         let allowTextEdit = !richTextView.attributedText.containsAttachments(in: linkRange)
         showLinkDialog(forURL: linkURL, text: linkTitle, target: target, range: linkRange, allowTextEdit: allowTextEdit)
     }
-
+    
     func insertMoreAttachment() {
         richTextView.replace(richTextView.selectedRange, withComment: Constants.moreAttachmentText)
     }
-
+    
     func showLinkDialog(forURL url: URL?, text: String?, target: String?, range: NSRange, allowTextEdit: Bool = true) {
-
+        
         let isInsertingNewLink = (url == nil)
         var urlToUse = url
-
+        
         if isInsertingNewLink {
             let pasteboard = UIPasteboard.general
             if let pastedURL = pasteboard.value(forPasteboardType:String(kUTTypeURL)) as? URL {
                 urlToUse = pastedURL
             }
         }
-
+        
         let insertButtonTitle = isInsertingNewLink ? NSLocalizedString("Insert Link", comment:"Label action for inserting a link on the editor") : NSLocalizedString("Update Link", comment:"Label action for updating a link on the editor")
         let removeButtonTitle = NSLocalizedString("Remove Link", comment:"Label action for removing a link from the editor");
         let cancelButtonTitle = NSLocalizedString("Cancel", comment:"Cancel button")
-
+        
         let alertController = UIAlertController(title:insertButtonTitle,
                                                 message:nil,
                                                 preferredStyle:UIAlertController.Style.alert)
         alertController.view.accessibilityIdentifier = "linkModal"
-
+        
         alertController.addTextField(configurationHandler: { [weak self]textField in
             textField.clearButtonMode = UITextField.ViewMode.always;
             textField.placeholder = NSLocalizedString("URL", comment:"URL text field placeholder");
             textField.keyboardType = .URL
             textField.textContentType = .URL
             textField.text = urlToUse?.absoluteString
-
+            
             textField.addTarget(self,
-                action:#selector(EditorDemoController.alertTextFieldDidChange),
-            for:UIControl.Event.editingChanged)
+                                action:#selector(EditorDemoController.alertTextFieldDidChange),
+                                for:UIControl.Event.editingChanged)
             
             textField.accessibilityIdentifier = "linkModalURL"
-            })
-
+        })
+        
         if allowTextEdit {
             alertController.addTextField(configurationHandler: { textField in
                 textField.clearButtonMode = UITextField.ViewMode.always
@@ -883,14 +916,14 @@ extension EditorDemoController {
                 textField.autocapitalizationType = UITextAutocapitalizationType.sentences
                 textField.autocorrectionType = UITextAutocorrectionType.default
                 textField.spellCheckingType = UITextSpellCheckingType.default
-
+                
                 textField.text = text;
-
+                
                 textField.accessibilityIdentifier = "linkModalText"
-
-                })
+                
+            })
         }
-
+        
         alertController.addTextField(configurationHandler: { textField in
             textField.clearButtonMode = UITextField.ViewMode.always
             textField.placeholder = NSLocalizedString("Target", comment:"Link text field placeholder")
@@ -898,20 +931,20 @@ extension EditorDemoController {
             textField.autocapitalizationType = UITextAutocapitalizationType.sentences
             textField.autocorrectionType = UITextAutocorrectionType.default
             textField.spellCheckingType = UITextSpellCheckingType.default
-
+            
             textField.text = target;
-
+            
             textField.accessibilityIdentifier = "linkModalTarget"
-
+            
         })
-
+        
         let insertAction = UIAlertAction(title:insertButtonTitle,
                                          style:UIAlertAction.Style.default,
                                          handler:{ [weak self]action in
-
+                                            
                                             self?.richTextView.becomeFirstResponder()
                                             guard let textFields = alertController.textFields else {
-                                                    return
+                                                return
                                             }
                                             let linkURLField = textFields[0]
                                             let linkTextField = textFields[1]
@@ -919,11 +952,11 @@ extension EditorDemoController {
                                             let linkURLString = linkURLField.text
                                             var linkTitle = linkTextField.text
                                             let target = linkTargetField.text
-
+                                            
                                             if  linkTitle == nil  || linkTitle!.isEmpty {
                                                 linkTitle = linkURLString
                                             }
-
+                                            
                                             guard
                                                 let urlString = linkURLString,
                                                 let url = URL(string:urlString)
@@ -937,46 +970,46 @@ extension EditorDemoController {
                                             } else {
                                                 self?.richTextView.setLink(url, target: target, inRange: range)
                                             }
-                                            })
+        })
         
         insertAction.accessibilityLabel = "insertLinkButton"
-
+        
         let removeAction = UIAlertAction(title:removeButtonTitle,
                                          style:UIAlertAction.Style.destructive,
                                          handler:{ [weak self] action in
                                             self?.richTextView.becomeFirstResponder()
                                             self?.richTextView.removeLink(inRange: range)
-            })
-
+        })
+        
         let cancelAction = UIAlertAction(title: cancelButtonTitle,
                                          style:UIAlertAction.Style.cancel,
                                          handler:{ [weak self]action in
-                self?.richTextView.becomeFirstResponder()
-            })
-
+                                            self?.richTextView.becomeFirstResponder()
+        })
+        
         alertController.addAction(insertAction)
         if !isInsertingNewLink {
             alertController.addAction(removeAction)
         }
-            alertController.addAction(cancelAction)
-
+        alertController.addAction(cancelAction)
+        
         // Disabled until url is entered into field
         if let text = alertController.textFields?.first?.text {
             insertAction.isEnabled = !text.isEmpty
         }
-
+        
         present(alertController, animated:true, completion:nil)
     }
-
+    
     @objc func alertTextFieldDidChange(_ textField: UITextField) {
         guard
             let alertController = presentedViewController as? UIAlertController,
             let urlFieldText = alertController.textFields?.first?.text,
             let insertAction = alertController.actions.first
             else {
-            return
+                return
         }
-
+        
         insertAction.isEnabled = !urlFieldText.isEmpty
     }
     
@@ -985,7 +1018,7 @@ extension EditorDemoController {
             editorView.selectedTextRange = editorView.htmlTextView.textRange(from: editorView.htmlTextView.endOfDocument, to: editorView.htmlTextView.endOfDocument)
         }
     }
-
+    
     @objc func showImagePicker() {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
@@ -994,26 +1027,26 @@ extension EditorDemoController {
         picker.allowsEditing = false
         picker.navigationBar.isTranslucent = false
         picker.modalPresentationStyle = .currentContext
-
+        
         present(picker, animated: true, completion: nil)
     }
-
+    
     // MARK: -
-
+    
     func makeToolbarButton(identifier: FormattingIdentifier) -> FormatBarItem {
         let button = FormatBarItem(image: identifier.iconImage, identifier: identifier.rawValue)
         button.accessibilityLabel = identifier.accessibilityLabel
         button.accessibilityIdentifier = identifier.accessibilityIdentifier
         return button
     }
-
+    
     func createToolbar() -> Aztec.FormatBar {
         let mediaItem = makeToolbarButton(identifier: .media)
         let scrollableItems = scrollableItemsForToolbar
         let overflowItems = overflowItemsForToolbar
-
+        
         let toolbar = Aztec.FormatBar()
-
+        
         if #available(iOS 13.0, *) {
             toolbar.backgroundColor = UIColor.systemGroupedBackground
             toolbar.tintColor = UIColor.secondaryLabel
@@ -1028,47 +1061,47 @@ extension EditorDemoController {
             toolbar.disabledTintColor = .lightGray
             toolbar.dividerTintColor = .gray
         }
-
+        
         toolbar.overflowToggleIcon = UIImage(named: "ellipsis")
         toolbar.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 44.0)
         toolbar.autoresizingMask = [ .flexibleHeight ]
         toolbar.formatter = self
-
+        
         toolbar.leadingItem = mediaItem
         toolbar.setDefaultItems(scrollableItems,
                                 overflowItems: overflowItems)
-
+        
         toolbar.barItemHandler = { [weak self] item in
             self?.handleAction(for: item)
         }
-
+        
         toolbar.leadingItemHandler = { [weak self] item in
             self?.showImagePicker()
         }
-
+        
         return toolbar
     }
-
+    
     var scrollableItemsForToolbar: [FormatBarItem] {
         let headerButton = makeToolbarButton(identifier: .p)
-
+        
         var alternativeIcons = [String: UIImage]()
         let headings = Constants.headers.suffix(from: 1) // Remove paragraph style
         for heading in headings {
             alternativeIcons[heading.formattingIdentifier.rawValue] = heading.iconImage
         }
-
+        
         headerButton.alternativeIcons = alternativeIcons
-
-
+        
+        
         let listButton = makeToolbarButton(identifier: .unorderedlist)
         var listIcons = [String: UIImage]()
         for list in Constants.lists {
             listIcons[list.formattingIdentifier.rawValue] = list.iconImage
         }
-
+        
         listButton.alternativeIcons = listIcons
-
+        
         return [
             makeToolbarButton(identifier: .icon),
             makeToolbarButton(identifier: .tagUser),
@@ -1081,7 +1114,7 @@ extension EditorDemoController {
             makeToolbarButton(identifier: .link)
         ]
     }
-
+    
     var overflowItemsForToolbar: [FormatBarItem] {
         return [
             makeToolbarButton(identifier: .underline),
@@ -1092,7 +1125,7 @@ extension EditorDemoController {
             makeToolbarButton(identifier: .sourcecode)
         ]
     }
-
+    
 }
 
 extension EditorDemoController: UINavigationControllerDelegate
@@ -1104,9 +1137,9 @@ extension EditorDemoController: UINavigationControllerDelegate
 extension EditorDemoController: UIImagePickerControllerDelegate
 {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
         dismiss(animated: true, completion: nil)
         richTextView.becomeFirstResponder()
         guard let mediaType =  info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaType)] as? String else {
@@ -1114,16 +1147,16 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         }
         let typeImage = kUTTypeImage as String
         let typeMovie = kUTTypeMovie as String
-
+        
         switch mediaType {
         case typeImage:
             guard let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {
                 return
             }
-
+            
             // Insert Image + Reclaim Focus
             mediaInserter.insertImage(image)
-
+            
         case typeMovie:
             guard let videoURL = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaURL)] as? URL else {
                 return
@@ -1139,7 +1172,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 //
 
 extension EditorDemoController {
-
+    
     static var tintedMissingImage: UIImage = {
         if #available(iOS 13.0, *) {
             return UIImage(named: "pencil")!
@@ -1148,7 +1181,7 @@ extension EditorDemoController {
             return UIImage(named: "pencil")!
         }
     }()
-
+    
     struct Constants {
         static let defaultContentFont   = UIFont.systemFont(ofSize: 14)
         static let defaultHtmlFont      = UIFont.systemFont(ofSize: 24)
@@ -1161,19 +1194,19 @@ extension EditorDemoController {
         static var mediaMessageAttributes: [NSAttributedString.Key: Any] {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .center
-
+            
             let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 15, weight: .semibold),
-                                                            .paragraphStyle: paragraphStyle,
-                                                            .foregroundColor: UIColor.white]
+                                                             .paragraphStyle: paragraphStyle,
+                                                             .foregroundColor: UIColor.white]
             return attributes
         }
     }    
 }
 
 extension FormattingIdentifier {
-
+    
     var iconImage: UIImage {
-
+        
         switch(self) {
         case .icon:
             return gridicon(.icon)
@@ -1225,12 +1258,12 @@ extension FormattingIdentifier {
             return gridicon(.help)
         }
     }
-
+    
     private func gridicon(_ gridiconTypeA: GridiconType) -> UIImage {
         let size = EditorDemoController.Constants.formatBarIconSize
         return .gridicon(gridiconTypeA, size: size)
     }
-
+    
     var accessibilityIdentifier: String {
         switch(self) {
         case .icon:
@@ -1283,7 +1316,7 @@ extension FormattingIdentifier {
             return ""
         }
     }
-
+    
     var accessibilityLabel: String {
         switch(self) {
         case .media:
@@ -1329,7 +1362,7 @@ extension FormattingIdentifier {
         default:
             return ""
         }
-
+        
     }
 }
 
@@ -1347,7 +1380,7 @@ private extension Header.HeaderType {
         case .h6:   return FormattingIdentifier.header6
         }
     }
-
+    
     var description: String {
         switch self {
         case .none: return NSLocalizedString("Default", comment: "Description of the default paragraph formatting style in the editor.")
@@ -1359,7 +1392,7 @@ private extension Header.HeaderType {
         case .h6: return "Heading 6"
         }
     }
-
+    
     var iconImage: UIImage? {
         return formattingIdentifier.iconImage
     }
@@ -1372,14 +1405,14 @@ private extension TextList.Style {
         case .unordered: return FormattingIdentifier.unorderedlist
         }
     }
-
+    
     var description: String {
         switch self {
         case .ordered: return "Ordered List"
         case .unordered: return "Unordered List"
         }
     }
-
+    
     var iconImage: UIImage? {
         return formattingIdentifier.iconImage
     }
@@ -1387,12 +1420,12 @@ private extension TextList.Style {
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
+    return input.rawValue
 }
 
 //extension FormattingIdentifier{
