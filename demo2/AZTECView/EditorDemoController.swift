@@ -651,8 +651,9 @@ extension EditorDemoController {
     }
     
     @objc func toggleTagUser(){
-        self.richTextView.hlInsertMentionInfo(mentionInfo: HLMentionInfo("04", "Nguyễn Kiều Vy"),
-                                              at: self.richTextView.hlStore.hlMentionSearchInfo.kRange)
+        if let selectedRange = self.richTextView.selectedTextRange {
+            self.richTextView.hlInsertMentionInfo(mentionInfo: HLMentionInfo("04", "Nguyễn Kiều Vy"), at: selectedRange)
+        }
     }
     
     @objc func toggleSetLocation() {
