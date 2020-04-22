@@ -30,11 +30,11 @@ class ExperienceTopicView: UIView {
         self.addSubview(self.experienceTopicImageView)
         
 //        // add constraints
-//        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-//        self.contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-//        self.contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-//        self.contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        self.experienceTopicImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.experienceTopicImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        self.experienceTopicImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        self.experienceTopicImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        self.experienceTopicImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
     
 }

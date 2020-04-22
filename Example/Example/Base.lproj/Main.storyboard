@@ -133,14 +133,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAI-Vu-U3M">
-                                <rect key="frame" x="20" y="544" width="374" height="318"/>
+                                <rect key="frame" x="20" y="244" width="374" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v06-Hi-XJv" customClass="ExperienceTopicView" customModule="AztecExample" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="374" height="500"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v06-Hi-XJv" customClass="ExperienceTopicView" customModule="AztecExample" customModuleProvider="target">
+                                <rect key="frame" x="20" y="44" width="374" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="Iua-rE-D3d"/>
+                                    <constraint firstAttribute="height" constant="200" id="Iua-rE-D3d"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -156,7 +156,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ImageCover" destination="v06-Hi-XJv" id="J1e-6c-16O"/>
+                        <outlet property="imageCover" destination="v06-Hi-XJv" id="lno-nf-LON"/>
+                        <outlet property="viewAddEditerView" destination="TAI-Vu-U3M" id="RJ6-0Q-Eyu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IVT-Q5-h1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

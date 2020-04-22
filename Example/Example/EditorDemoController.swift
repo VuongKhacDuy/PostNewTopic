@@ -7,8 +7,10 @@ import UIKit
 import WordPressEditor
 
 class EditorDemoController: UIViewController {    
-
-    @IBOutlet weak var ImageCover: ExperienceTopicView!
+    
+    @IBOutlet weak var imageCover: ExperienceTopicView!
+    
+    @IBOutlet weak var viewAddEditerView: UIView!
     
     fileprivate(set) lazy var formatBar: Aztec.FormatBar = {
         return self.createToolbar()
@@ -90,12 +92,6 @@ class EditorDemoController: UIViewController {
         textView.smartDashesType = .no
         textView.smartQuotesType = .no
     }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//    fileprivate(set) lazy var coverImgaeExperience: UIView = {
-//        let coverImageView = ExperienceTopicView()
-//        return coverImageView
-//    }()
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     fileprivate(set) lazy var titleTextView: UITextView = {
         let textView = UITextView()
@@ -183,14 +179,10 @@ class EditorDemoController: UIViewController {
         
         edgesForExtendedLayout = UIRectEdge()
         navigationController?.navigationBar.isTranslucent = false
-        view.addSubview(editorView)
-        view.addSubview(titleTextView)
-        view.addSubview(titlePlaceholderLabel)
-        view.addSubview(separatorView)
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//        view.addSubview(coverImgaeExperience)
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+        viewAddEditerView.addSubview(editorView)
+        viewAddEditerView.addSubview(titleTextView)
+        viewAddEditerView.addSubview(titlePlaceholderLabel)
+        viewAddEditerView.addSubview(separatorView)
         
         editorView.richTextView.textContainer.lineFragmentPadding = 0
         // color setup
@@ -310,25 +302,9 @@ class EditorDemoController: UIViewController {
     private func configureConstraints() {
         
         let layoutGuide = view.readableContentGuide
-        
-
-                // set layout for cover image of topic experience
-//                NSLayoutConstraint.activate([
-//                    coverImgaeExperience.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//        //            coverImgaeExperience.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),
-//                    coverImgaeExperience.topAnchor.constraint(equalTo: view.topAnchor,constant: 0),
-////                    coverImgaeExperience.widthAnchor.constraint(equalToConstant: 100),
-//                    coverImgaeExperience.heightAnchor.constraint(equalToConstant: 100),
-//
-//                    coverImgaeExperience.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: 0)
-                    
-        //            coverImgaeExperience.heightAnchor
-        //            let widthConstraint = NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 100)
-        //            let heightConstraint = NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 100)
-//                ])
-        ImageCover.translatesAutoresizingMaskIntoConstraints = false
+        imageCover.translatesAutoresizingMaskIntoConstraints = false
         titleHeightConstraint = titleTextView.heightAnchor.constraint(equalToConstant: ceil(titleTextView.font!.lineHeight))
-        titleTopConstraint = titleTextView.topAnchor.constraint(equalTo: ImageCover.bottomAnchor, constant: 0)
+        titleTopConstraint = titleTextView.topAnchor.constraint(equalTo: imageCover.bottomAnchor, constant: 0)
         titlePlaceholderTopConstraint = titlePlaceholderLabel.topAnchor.constraint(equalTo: titleTextView.topAnchor, constant:0)
         titlePlaceholderLeadingConstraint = titlePlaceholderLabel.leadingAnchor.constraint(equalTo: titleTextView.leadingAnchor, constant: 0)
         updateTitlePosition()
@@ -358,12 +334,10 @@ class EditorDemoController: UIViewController {
         NSLayoutConstraint.activate([
             editorView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
             editorView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),
-            editorView.topAnchor.constraint(equalTo: ImageCover.bottomAnchor, constant: 0),
+            editorView.topAnchor.constraint(equalTo: imageCover.bottomAnchor, constant: 0),
             editorView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
         
-        
-//        coverImgaeExperience.layoutIfNeeded()
         self.view.layoutIfNeeded()
     }
     
