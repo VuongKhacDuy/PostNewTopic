@@ -3,16 +3,6 @@
     {
       "idiom" : "universal",
       "filename" : "gridicons-image.pdf"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "gridicons-image-dark.pdf",
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ]
     }
   ],
   "info" : {

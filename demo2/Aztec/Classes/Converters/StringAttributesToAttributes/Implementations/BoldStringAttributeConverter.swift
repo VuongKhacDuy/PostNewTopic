@@ -32,7 +32,7 @@ open class BoldStringAttributeConverter: StringAttributeConverter {
     // MARK: - Style Detection
     
     func shouldEnableBoldElement(for attributes: [NSAttributedString.Key: Any]) -> Bool {
-        if isHeading(for: attributes) && Configuration.headersWithBoldTrait {
+        if isHeading(for: attributes) {
             // If this is a heading then shadow represents bold elements since
             // headings are bold by default
             return hasShadowTrait(for: attributes)

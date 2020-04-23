@@ -1,4 +1,4 @@
-//import Aztec
+//
 import Foundation
 //import Gridicons
 import MobileCoreServices
@@ -188,7 +188,6 @@ class EditorDemoController: UIViewController {
             editorView.richTextView.textColor = UIColor.label
             editorView.richTextView.blockquoteBackgroundColor = UIColor.secondarySystemBackground
             editorView.richTextView.preBackgroundColor = UIColor.secondarySystemBackground
-            editorView.richTextView.blockquoteBorderColors = [.secondarySystemFill, .systemTeal, .systemBlue]
             var attributes = editorView.richTextView.linkTextAttributes
             attributes?[.foregroundColor] =  UIColor.link
         } else {
@@ -340,11 +339,11 @@ class EditorDemoController: UIViewController {
         textView.keyboardDismissMode = .interactive
         if #available(iOS 13.0, *) {
             textView.textColor = UIColor.label
-            textView.defaultTextColor = UIColor.label
+//            textView.defaultTextColor = UIColor.label
         } else {
             // Fallback on earlier versions
             textView.textColor = UIColor(red: 0x1A/255.0, green: 0x1A/255.0, blue: 0x1A/255.0, alpha: 1)
-            textView.defaultTextColor = UIColor(red: 0x1A/255.0, green: 0x1A/255.0, blue: 0x1A/255.0, alpha: 1)
+//            textView.defaultTextColor = UIColor(red: 0x1A/255.0, green: 0x1A/255.0, blue: 0x1A/255.0, alpha: 1)
         }
         textView.linkTextAttributes = [.foregroundColor: UIColor(red: 0x01 / 255.0, green: 0x60 / 255.0, blue: 0x87 / 255.0, alpha: 1), NSAttributedString.Key.underlineStyle: NSNumber(value: NSUnderlineStyle.single.rawValue)]
     }
@@ -356,7 +355,7 @@ class EditorDemoController: UIViewController {
         if #available(iOS 13.0, *) {
             textView.textColor = UIColor.label
             if let htmlStorage = textView.textStorage as? HTMLStorage {
-                htmlStorage.textColor = UIColor.label
+//                htmlStorage.textColor = UIColor.label
             }
         } else {
             // Fallback on earlier versions
@@ -611,12 +610,12 @@ extension EditorDemoController {
             optionsTablePresenter.dismiss()
         }
         switch formattingIdentifier {
-        case .tagUser:
-            toggleTagUser()
-        case .setLocation:
-            toggleSetLocation()
-        case .icon:
-            toggleStrikethrough()
+//        case .tagUser:
+//            toggleTagUser()
+//        case .setLocation:
+//            toggleSetLocation()
+//        case .icon:
+//            toggleStrikethrough()
         case .bold:
             toggleBold()
         case .italic:
@@ -1070,9 +1069,9 @@ extension EditorDemoController {
         listButton.alternativeIcons = listIcons
 
         return [
-            makeToolbarButton(identifier: .icon),
-            makeToolbarButton(identifier: .tagUser),
-            makeToolbarButton(identifier: .setLocation),
+//            makeToolbarButton(identifier: .icon),
+//            makeToolbarButton(identifier: .tagUser),
+//            makeToolbarButton(identifier: .setLocation),
             headerButton,
             listButton,
             makeToolbarButton(identifier: .blockquote),
@@ -1175,12 +1174,12 @@ extension FormattingIdentifier {
     var iconImage: UIImage {
 
         switch(self) {
-        case .icon:
-            return gridicon(.icon)
-        case .tagUser:
-            return gridicon(.tagUser)
-        case .setLocation:
-            return gridicon(.setlocation)
+//        case .icon:
+//            return gridicon(.icon)
+//        case .tagUser:
+//            return gridicon(.tagUser)
+//        case .setLocation:
+//            return gridicon(.setlocation)
         case .media:
             return gridicon(.addOutline)
         case .p:
@@ -1233,12 +1232,12 @@ extension FormattingIdentifier {
 
     var accessibilityIdentifier: String {
         switch(self) {
-        case .icon:
-            return "formatToolbarInsertIcon"
-        case .tagUser:
-            return "formatToolbarInsertTagUser"
-        case.setLocation:
-            return "formatToolbarSetLoction"
+//        case .icon:
+//            return "formatToolbarInsertIcon"
+//        case .tagUser:
+//            return "formatToolbarInsertTagUser"
+//        case.setLocation:
+//            return "formatToolbarSetLoction"
         case .media:
             return "formatToolbarInsertMedia"
         case .p:

@@ -1,6 +1,6 @@
 import UIKit
 import Foundation
-import CoreServices
+
 
 // MARK: - TextViewAttachmentDelegate
 //
@@ -173,11 +173,6 @@ open class TextView: HLMentionsTextView {
     ///
     open var pasteboardDelegate: TextViewPasteboardDelegate = AztecTextViewPasteboardDelegate()
 
-
-    /// If this is true the text view will notify is delegate and notification system when changes happen by calls to methods like setHTML
-    ///
-    open var shouldNotifyOfNonUserChanges = true
-
     // MARK: - Customizable Input VC
     
     private var customInputViewController: UIInputViewController?
@@ -223,56 +218,39 @@ open class TextView: HLMentionsTextView {
     // MARK: - Properties: Text Lists
 
     var maximumListIndentationLevels = 7
-    
-    // MARK: - Properties: Blockquotes
-    
-    /// The max levels of quote indentation allowed
-    /// Default is 9
-    public var maximumBlockquoteIndentationLevels = 9
 
     // MARK: - Properties: UI Defaults
 
-    /// The font to use to render any HTML that doesn't specify an explicit font.
-    /// If this is changed all the instances that use this font will be updated to the new one.
-    public var defaultFont: UIFont {
-        didSet {
-            textStorage.replace(font: oldValue, with: defaultFont)
-        }
-    }
-
+    public var defaultFont: UIFont
     public let defaultParagraphStyle: ParagraphStyle
     var defaultMissingImage: UIImage
     
     fileprivate var defaultAttributes: [NSAttributedString.Key: Any] {
-        var attributes: [NSAttributedString.Key: Any] = [
+        let attributes: [NSAttributedString.Key: Any] = [
             .font: defaultFont,
-            .paragraphStyle: defaultParagraphStyle,
+            .paragraphStyle: defaultParagraphStyle
         ]
-        if let color = defaultTextColor {
-            attributes[.foregroundColor] = color
-        }
+
         return attributes
     }
-
-    open lazy var defaultTextColor: UIColor? = {
-        if #available(iOS 13.0, *) {
-            return UIColor.label
-        } else {
-            return UIColor.darkText
-        }        
-    }()
-
-    open override var textColor: UIColor? {
-        set {
-            super.textColor = newValue
-            defaultTextColor = newValue
+    
+    /// This closure will be executed whenever the `TextView` needs to set the base style for
+    /// a caption.  Override this to customize the caption styling.
+    ///
+    public lazy var captionStyler: ([NSAttributedString.Key:Any]) -> [NSAttributedString.Key:Any] = { [weak self] attributes in
+        guard let `self` = self else {
+            return attributes
         }
-
-        get {
-            return super.textColor
-        }
+        
+        let font = self.defaultFont.withSize(10)
+        
+        var attributes = attributes
+        attributes[.font] = font
+        attributes[.foregroundColor] = UIColor.darkGray
+        
+        return attributes
     }
-
+    
     // MARK: - Plugin Loading
     
     var pluginManager: PluginManager {
@@ -287,7 +265,7 @@ open class TextView: HLMentionsTextView {
 
     // MARK: - TextKit Aztec Subclasses
 
-    public var storage: TextStorage {
+    var storage: TextStorage {
         return textStorage as! TextStorage
     }
 
@@ -298,21 +276,20 @@ open class TextView: HLMentionsTextView {
 
     // MARK: - Apparance Properties
 
-    
-    /// Blockquote Blocks Border and Text Colors
+    /// Blockquote Blocks Border Color.
     ///
-    @objc dynamic public var blockquoteBorderColors: [UIColor] {
+    @objc dynamic public var blockquoteBorderColor: UIColor {
         get {
-            return layout.blockquoteBorderColors
+            return layout.blockquoteBorderColor
         }
         set {
-            layout.blockquoteBorderColors = newValue
+            layout.blockquoteBorderColor = newValue
         }
     }
-    
+
     /// Blockquote Blocks Background Color.
     ///
-    @objc dynamic public var blockquoteBackgroundColor: UIColor? {
+    @objc dynamic public var blockquoteBackgroundColor: UIColor {
         get {
             return layout.blockquoteBackgroundColor
         }
@@ -321,13 +298,7 @@ open class TextView: HLMentionsTextView {
         }
     }
 
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if #available(iOS 13.0, *) {
-            if let previous = previousTraitCollection, previous.hasDifferentColorAppearance(comparedTo: traitCollection) {
-                self.refreshMediaAttachments()
-            }
-        }
-    }
+
     /// Blockquote Blocks Background Width.
     ///
     @objc dynamic public var blockquoteBorderWidth: CGFloat {
@@ -341,7 +312,7 @@ open class TextView: HLMentionsTextView {
 
     /// Pre Blocks Background Color.
     ///
-    @objc dynamic public var preBackgroundColor: UIColor? {
+    @objc dynamic public var preBackgroundColor: UIColor {
         get {
             return layout.preBackgroundColor
         }
@@ -371,14 +342,6 @@ open class TextView: HLMentionsTextView {
         }
     }
 
-    override open var textAlignment: NSTextAlignment {
-        didSet {
-            if (textAlignment != oldValue) {
-                recalculateTypingAttributes()
-            }
-        }
-    }
-
 
     /// This property returns the Attributes associated to the Extra Line Fragment.
     ///
@@ -401,17 +364,16 @@ open class TextView: HLMentionsTextView {
 
     // MARK: - Init & deinit
 
-    /// Creates a Text View using the provided parameters as a base for HTML rendering.
-    /// - Parameter defaultFont: The font to use to render the elements if no specific font is set by the HTML.
-    /// - Parameter defaultParagraphStyle: The default paragraph style if no explicit attributes are defined in HTML
-    /// - Parameter defaultMissingImage: The image to use if the view is not able to render an image specified in the HTML.
     @objc public init(
         defaultFont: UIFont,
         defaultParagraphStyle: ParagraphStyle = ParagraphStyle.default,
         defaultMissingImage: UIImage) {
 
-        self.defaultFont = UIFontMetrics.default.scaledFont(for: defaultFont)
-        
+        if #available(iOS 11.0, *) {
+            self.defaultFont = UIFontMetrics.default.scaledFont(for: defaultFont)
+        } else {
+            self.defaultFont = defaultFont
+        }
         self.defaultParagraphStyle = defaultParagraphStyle
         self.defaultMissingImage = defaultMissingImage
 
@@ -428,7 +390,13 @@ open class TextView: HLMentionsTextView {
     }
 
     required public init?(coder aDecoder: NSCoder) {
-        defaultFont = FontProvider.shared.defaultFont
+        let font = UIFont.systemFont(ofSize: 14)
+        if #available(iOS 11.0, *) {
+            self.defaultFont = UIFontMetrics.default.scaledFont(for: font)
+        } else {
+            self.defaultFont = font
+        }
+
         defaultParagraphStyle = ParagraphStyle.default
         defaultMissingImage = Assets.imageIcon
         
@@ -438,11 +406,12 @@ open class TextView: HLMentionsTextView {
 
     private func commonInit() {
         allowsEditingTextAttributes = true
-        adjustsFontForContentSizeCategory = true
-
+        if #available(iOS 10.0, *) {
+            adjustsFontForContentSizeCategory = true
+        }
         storage.attachmentsDelegate = self
         font = defaultFont
-        linkTextAttributes = [.underlineStyle: NSNumber(value: NSUnderlineStyle.single.rawValue), .foregroundColor: tintColor as Any]
+        linkTextAttributes = [.underlineStyle: NSNumber(value: NSUnderlineStyle.single.rawValue), .foregroundColor: self.tintColor]
         typingAttributes = defaultAttributes
         setupMenuController()
         setupAttachmentTouchDetection()
@@ -489,20 +458,16 @@ open class TextView: HLMentionsTextView {
 
     open override func cut(_ sender: Any?) {
         let data = storage.attributedSubstring(from: selectedRange).archivedData()
-        let html = storage.getHTML(range: selectedRange)
         super.cut(sender)
 
         storeInPasteboard(encoded: data)
-        storeInPasteboard(html: html)
     }
 
     open override func copy(_ sender: Any?) {
         let data = storage.attributedSubstring(from: selectedRange).archivedData()
-        let html = storage.getHTML(range: selectedRange)
         super.copy(sender)
 
         storeInPasteboard(encoded: data)
-        storeInPasteboard(html: html)
     }
 
     open override func paste(_ sender: Any?) {
@@ -551,110 +516,41 @@ open class TextView: HLMentionsTextView {
     }
 
     @objc func handleShiftTab(command: UIKeyCommand) {
-        
-        let lists = TextListFormatter.lists(in: typingAttributes)
-        let quotes = BlockquoteFormatter.blockquotes(in: typingAttributes)
-        
-        if let list = lists.last {
-            indent(list: list, increase: false)
-            
-        } else if let quote = quotes.last {
-            indent(blockquote: quote, increase: false)
-            
-        } else {
+        guard let list = TextListFormatter.lists(in: typingAttributes).last else {
             return
+        }
+
+        let formatter = TextListFormatter(style: list.style, placeholderAttributes: nil, increaseDepth: true)
+        let liFormatter = LiFormatter(placeholderAttributes: nil)
+        let targetRange = formatter.applicationRange(for: selectedRange, in: storage)
+
+        performUndoable(at: targetRange) {
+            let finalRange = formatter.removeAttributes(from: storage, at: targetRange)
+            liFormatter.removeAttributes(from: storage, at: targetRange)
+            typingAttributes = textStorage.attributes(at: targetRange.location, effectiveRange: nil)
+            return finalRange
         }
     }
 
     @objc func handleTab(command: UIKeyCommand) {
-        
         let lists = TextListFormatter.lists(in: typingAttributes)
-        let quotes = BlockquoteFormatter.blockquotes(in: typingAttributes)
-
-        if let list = lists.last, lists.count < maximumListIndentationLevels {
-            indent(list: list)
-
-        } else if let quote = quotes.last, quotes.count < maximumBlockquoteIndentationLevels {
-            indent(blockquote: quote)
-
-        } else {
+        guard let list = lists.last, lists.count < maximumListIndentationLevels else {
             insertText(String(.tab))
+            return
         }
-        
-    }
-    
-    
-    // MARK: - Text List indent methods
-    
-    private func indent(list: TextList, increase: Bool = true) {
 
         let formatter = TextListFormatter(style: list.style, placeholderAttributes: nil, increaseDepth: true)
-        let li = LiFormatter(placeholderAttributes: nil)
-
+        let liFormatter = LiFormatter(placeholderAttributes: nil)
         let targetRange = formatter.applicationRange(for: selectedRange, in: storage)
 
-        performUndoable(at: targetRange) {
-            let finalRange: NSRange
-            if increase {
-                finalRange = increaseIndent(listFormatter: formatter, liFormatter: li, targetRange: targetRange)
-            } else {
-                finalRange = decreaseIndent(listFormatter: formatter, liFormatter: li, targetRange: targetRange)
-            }
+        performUndoable(at: targetRange) { 
+            let finalRange = formatter.applyAttributes(to: storage, at: targetRange)
+            liFormatter.applyAttributes(to: storage, at: targetRange)
             typingAttributes = textStorage.attributes(at: targetRange.location, effectiveRange: nil)
             return finalRange
         }
-
-    }
-    
-    // MARK: Text List increase or decrease indentation
-    private func increaseIndent(listFormatter: TextListFormatter, liFormatter: LiFormatter, targetRange: NSRange) -> NSRange {
-        let finalRange = listFormatter.applyAttributes(to: storage, at: targetRange)
-        liFormatter.applyAttributes(to: storage, at: targetRange)
-        
-        return finalRange
-    }
-    
-    private func decreaseIndent(listFormatter: TextListFormatter, liFormatter: LiFormatter, targetRange: NSRange) -> NSRange {
-        let finalRange = listFormatter.removeAttributes(from: storage, at: targetRange)
-        liFormatter.removeAttributes(from: storage, at: targetRange)
-        
-        return finalRange
-    }
-    
-    
-    // MARK: - Blockquote indent methods
-    
-    private func indent(blockquote: Blockquote, increase: Bool = true) {
-        
-        
-        
-        let formatter = BlockquoteFormatter(placeholderAttributes: typingAttributes, increaseDepth: true)
-        let targetRange = formatter.applicationRange(for: selectedRange, in: storage)
-
-        performUndoable(at: targetRange) {
-            let finalRange: NSRange
-            if increase {
-                finalRange = increaseIndent(quoteFormatter: formatter, targetRange: targetRange)
-            } else {
-                finalRange = decreaseIndent(quoteFormatter: formatter, targetRange: targetRange)
-            }
-            typingAttributes = textStorage.attributes(at: targetRange.location, effectiveRange: nil)
-            return finalRange
-        }
-
     }
 
-    // MARK: Blockquote increase or decrease indentation
-    private func increaseIndent(quoteFormatter: BlockquoteFormatter, targetRange: NSRange) -> NSRange {
-        let finalRange = quoteFormatter.applyAttributes(to: storage, at: targetRange)
-        return finalRange
-    }
-    
-    private func decreaseIndent(quoteFormatter: BlockquoteFormatter, targetRange: NSRange) -> NSRange {
-        let finalRange = quoteFormatter.removeAttributes(from: storage, at: targetRange)
-        return finalRange
-    }
-    
 
     // MARK: - Pasteboard Helpers
 
@@ -663,14 +559,6 @@ open class TextView: HLMentionsTextView {
             pasteboard.items[0][NSAttributedString.pastesboardUTI] = data;
         } else {
             pasteboard.addItems([[NSAttributedString.pastesboardUTI: data]])
-        }
-    }
-
-    internal func storeInPasteboard(html: String, pasteboard: UIPasteboard = UIPasteboard.general) {
-        if pasteboard.numberOfItems > 0 {
-            pasteboard.items[0][kUTTypeHTML as String] = html;
-        } else {
-            pasteboard.addItems([[kUTTypeHTML as String: html]])
         }
     }
 
@@ -738,7 +626,7 @@ open class TextView: HLMentionsTextView {
         evaluateRemovalOfSingleLineParagraphAttributesAfterSelectionChange()
         ensureRemovalOfParagraphAttributesWhenPressingBackspaceAndEmptyingTheDocument()
         ensureCursorRedraw(afterEditing: deletedString.string)
-        recalculateTypingAttributes()
+
         notifyTextViewDidChange()
     }
 
@@ -838,9 +726,9 @@ open class TextView: HLMentionsTextView {
     // MARK: - Getting format identifiers
 
     private static let formatterMap: [FormattingIdentifier: AttributeFormatter] = [
-        .bold: Configuration.defaultBoldFormatter,
+        .bold: BoldFormatter(),
         .italic: ItalicFormatter(),
-        .underline: SpanUnderlineFormatter(),
+        .underline: UnderlineFormatter(),
         .strikethrough: StrikethroughFormatter(),
         .link: LinkFormatter(),
         .orderedlist: TextListFormatter(style: .ordered),
@@ -1008,7 +896,7 @@ open class TextView: HLMentionsTextView {
     /// - Parameter range: The NSRange to edit.
     ///
     open func toggleBold(range: NSRange) {
-        let formatter = Configuration.defaultBoldFormatter
+        let formatter = BoldFormatter()
         toggle(formatter: formatter, atRange: range)
     }
 
@@ -1028,7 +916,7 @@ open class TextView: HLMentionsTextView {
     /// - Parameter range: The NSRange to edit.
     ///
     open func toggleUnderline(range: NSRange) {
-        let formatter = SpanUnderlineFormatter()
+        let formatter = UnderlineFormatter()
         toggle(formatter: formatter, atRange: range)
     }
 
@@ -1077,7 +965,6 @@ open class TextView: HLMentionsTextView {
         ensureInsertionOfEndOfLineForEmptyParagraphAtEndOfFile(forApplicationRange: range)
 
         let formatter = BlockquoteFormatter(placeholderAttributes: typingAttributes)
-        
         toggle(formatter: formatter, atRange: range)
         
         let citeFormatter = CiteFormatter()
@@ -1339,7 +1226,6 @@ open class TextView: HLMentionsTextView {
     private func recalculateTypingAttributes(at location: Int) {
         
         guard storage.length > 0 else {
-            typingAttributes = defaultAttributes
             return
         }
         
@@ -1437,7 +1323,8 @@ open class TextView: HLMentionsTextView {
     open func replaceWithImage(at range: NSRange, sourceURL url: URL, placeHolderImage: UIImage?, identifier: String = UUID().uuidString) -> ImageAttachment {
         let attachment = ImageAttachment(identifier: identifier, url: url)
         attachment.delegate = storage
-        attachment.image = placeHolderImage        
+        attachment.image = placeHolderImage
+        attachment.alignment = .none
         replace(at: range, with: attachment)
         return attachment
     }
@@ -1475,14 +1362,6 @@ open class TextView: HLMentionsTextView {
     open func removeMediaAttachments() {
         storage.removeMediaAttachments()
         notifyTextViewDidChange()
-    }
-
-    /// Forces  a Refresh of all media attachment in the text view
-    open func refreshMediaAttachments() {
-        storage.enumerateAttachmentsOfType(MediaAttachment.self) { (attachment, range, _) in
-            attachment.refresh()
-            self.refresh(attachment, overlayUpdateOnly: false)
-        }
     }
 
     /// Replaces a Video attachment at the specified range

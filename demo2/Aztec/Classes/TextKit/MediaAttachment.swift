@@ -45,12 +45,6 @@ open class MediaAttachment: NSTextAttachment {
         }
     }
 
-    /// Indicates if the media is loaded
-    ///
-    public var isLoaded: Bool {
-        return !needsNewAsset && !isFetchingImage
-    }
-
     /// Indicates if a new Asset should be retrieved, or we're current!.
     ///
     fileprivate var needsNewAsset = true
@@ -184,14 +178,6 @@ open class MediaAttachment: NSTextAttachment {
         url = newURL
         retryCount = 0
         needsNewAsset = refreshAsset
-    }
-
-    /// Invalidates the attachment and forces an update of the attachment image
-    open func refresh() {
-        needsNewAsset = true
-        retryCount = 0
-        image = nil
-        glyphImage = nil
     }
 
     /// Refresh attachment identifier

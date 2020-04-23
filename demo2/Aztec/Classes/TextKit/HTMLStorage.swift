@@ -15,10 +15,6 @@ open class HTMLStorage: NSTextStorage {
     ///
     open var font: UIFont
 
-    /// Color to be applied over HTML text
-    ///
-    open var textColor = Styles.defaultTextColor
-
     /// Color to be applied over HTML Comments
     ///
     open var commentColor = Styles.defaultCommentColor
@@ -128,7 +124,7 @@ private extension HTMLStorage {
     func colorizeHTML() {
         let fullStringRange = rangeOfEntireString
 
-        addAttribute(.foregroundColor, value: textColor, range: fullStringRange)
+        removeAttribute(.foregroundColor, range: fullStringRange)
         addAttribute(.font, value: font, range: fullStringRange)
 
         let tags = RegExes.html.matches(in: string, options: [], range: fullStringRange)
@@ -168,7 +164,6 @@ extension HTMLStorage {
     /// Default Styles
     ///
     public struct Styles {
-        static let defaultTextColor = UIColor.black
         static let defaultCommentColor = UIColor.lightGray
         static let defaultTagColor = UIColor(red: 0x00/255.0, green: 0x75/255.0, blue: 0xB6/255.0, alpha: 0xFF/255.0)
         static let defaultQuotedColor = UIColor(red: 0x6E/255.0, green: 0x96/255.0, blue: 0xB1/255.0, alpha: 0xFF/255.0)

@@ -81,7 +81,7 @@ open class TextStorage: NSTextStorage {
     
     // MARK: - HTML Conversion
     
-    public let htmlConverter = HTMLConverter()
+    let htmlConverter = HTMLConverter()
     
     // MARK: - PluginManager
     
@@ -364,14 +364,6 @@ open class TextStorage: NSTextStorage {
 
     open func getHTML(prettify: Bool = false) -> String {
         return htmlConverter.html(from: self, prettify: prettify)
-    }
-
-    open func getHTML(prettify: Bool = false, range: NSRange) -> String {
-        return htmlConverter.html(from: self.attributedSubstring(from: range), prettify: prettify)
-    }
-
-    open func getHTML(prettify: Bool = false, from attributedString: NSAttributedString) -> String {
-        return htmlConverter.html(from: attributedString, prettify: prettify)
     }
     
     func setHTML(_ html: String, defaultAttributes: [NSAttributedString.Key: Any]) {

@@ -6,18 +6,12 @@ import UIKit
 public class EditorView: UIView {
     public let htmlTextView: UITextView
     public let richTextView: TextView
-    public var htmlStorage: HTMLStorage {
-        guard let htmlStorage = htmlTextView.textStorage as? HTMLStorage else {
-            fatalError("If this happens, something is very off on the init config")
-        }
-        return htmlStorage
-    }
     
     // MARK: - Encoding / Decoding
     
     static let htmlTextViewKey = "Aztec.EditorView.htmlTextView"
     static let richTextViewKey = "Aztec.EditorView.richTextView"
-
+    
     // MARK: - Content Insets
     
     public var contentInset: UIEdgeInsets {
@@ -107,10 +101,12 @@ public class EditorView: UIView {
         
         self.htmlTextView = htmlTextView
         self.richTextView = richTextView
-
-        htmlTextView.smartInsertDeleteType = .no
-        htmlTextView.smartDashesType = .no
-        htmlTextView.smartQuotesType = .no
+        
+        if #available(iOS 11, *) {
+            htmlTextView.smartInsertDeleteType = .no
+            htmlTextView.smartDashesType = .no
+            htmlTextView.smartQuotesType = .no
+        }
         
         super.init(coder: aDecoder)
         
@@ -121,16 +117,18 @@ public class EditorView: UIView {
         let storage = HTMLStorage(defaultFont: defaultHTMLFont)
         let layoutManager = NSLayoutManager()
         let container = NSTextContainer()
-
+        
         storage.addLayoutManager(layoutManager)
         layoutManager.addTextContainer(container)
-
+        
         self.htmlTextView = UITextView(frame: .zero, textContainer: container)
         self.richTextView = TextView(defaultFont: defaultFont, defaultParagraphStyle: defaultParagraphStyle, defaultMissingImage: defaultMissingImage)
-
-        htmlTextView.smartInsertDeleteType = .no
-        htmlTextView.smartDashesType = .no
-        htmlTextView.smartQuotesType = .no
+        
+        if #available(iOS 11, *) {
+            htmlTextView.smartInsertDeleteType = .no
+            htmlTextView.smartDashesType = .no
+            htmlTextView.smartQuotesType = .no
+        }
         
         super.init(frame: .zero)
         
@@ -319,7 +317,7 @@ extension EditorView: UITextInput {
         }
         
         set {
-            activeView.selectedTextRange = newValue
+            activeView.selectedTextRange = selectedTextRange
         }
     }
 }

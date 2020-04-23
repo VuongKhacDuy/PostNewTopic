@@ -16,11 +16,6 @@ public struct FormattingIdentifier: RawRepresentable, Hashable {
 }
 
 extension FormattingIdentifier {
-
-    public static let icon = FormattingIdentifier("icon")
-    public static let setLocation = FormattingIdentifier("location")
-    public static let tagUser = FormattingIdentifier("tagUser")
-
     public static let blockquote = FormattingIdentifier("blockquote")
     public static let bold = FormattingIdentifier("bold")
     public static let code = FormattingIdentifier("code")

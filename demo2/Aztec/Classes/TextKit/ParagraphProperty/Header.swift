@@ -33,7 +33,12 @@ open class Header: ParagraphProperty {
 
         public var fontSize: Float {
             let fontSize = HeaderType.fontSizeMap[self] ?? Constants.defaultFontSize
-            return Float(UIFontMetrics.default.scaledValue(for: CGFloat(fontSize)))
+
+            if #available(iOS 11.0, *) {
+                return Float(UIFontMetrics.default.scaledValue(for: CGFloat(fontSize)))
+            } else {
+                return fontSize
+            }
         }
     }
 

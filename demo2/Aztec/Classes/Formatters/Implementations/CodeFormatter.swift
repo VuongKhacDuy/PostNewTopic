@@ -12,8 +12,15 @@ class CodeFormatter: AttributeFormatter {
 
     // MARK: - Init
 
-    init(monospaceFont: UIFont = FontProvider.shared.monospaceFont, backgroundColor: UIColor = ColorProvider.shared.codeBackgroungColor) {
-        self.monospaceFont = monospaceFont
+    init(monospaceFont: UIFont = UIFont(descriptor:UIFontDescriptor(name: "Courier", size: 12), size:12), backgroundColor: UIColor = UIColor.lightGray) {
+        let font: UIFont
+
+        if #available(iOS 11.0, *) {
+            font = UIFontMetrics.default.scaledFont(for: monospaceFont)
+        } else {
+            font = monospaceFont
+        }
+        self.monospaceFont = font
         self.backgroundColor = backgroundColor
         self.htmlRepresentationKey = .codeHtmlRepresentation
     }

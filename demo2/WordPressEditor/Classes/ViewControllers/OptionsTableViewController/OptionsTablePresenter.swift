@@ -1,4 +1,4 @@
-//import Aztec
+
 import Foundation
 import UIKit
 
@@ -58,7 +58,7 @@ public class OptionsTablePresenter: NSObject {
         optionsViewController.popoverPresentationController?.permittedArrowDirections = [.down]
         optionsViewController.popoverPresentationController?.sourceView = barItem
         optionsViewController.popoverPresentationController?.sourceRect = barItem.bounds
-        optionsViewController.popoverPresentationController?.backgroundColor = optionsViewController.cellBackgroundColor
+        optionsViewController.popoverPresentationController?.backgroundColor = .white
         optionsViewController.popoverPresentationController?.delegate = self
         
         presentingViewController.present(optionsViewController, animated: true, completion: completion)
