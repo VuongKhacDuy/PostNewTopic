@@ -610,12 +610,12 @@ extension EditorDemoController {
             optionsTablePresenter.dismiss()
         }
         switch formattingIdentifier {
-//        case .tagUser:
-//            toggleTagUser()
-//        case .setLocation:
-//            toggleSetLocation()
-//        case .icon:
-//            toggleStrikethrough()
+        case .tagUser:
+            toggleTagUser()
+        case .setLocation:
+            toggleSetLocation()
+        case .icon:
+            toggleStrikethrough()
         case .bold:
             toggleBold()
         case .italic:
@@ -1006,6 +1006,7 @@ extension EditorDemoController {
         return button
     }
 
+    //func create toolbar
     func createToolbar() -> FormatBar {
         let mediaItem = makeToolbarButton(identifier: .media)
         let scrollableItems = scrollableItemsForToolbar
@@ -1068,16 +1069,17 @@ extension EditorDemoController {
 
         listButton.alternativeIcons = listIcons
 
+        // set icon func on toolbar
         return [
-//            makeToolbarButton(identifier: .icon),
-//            makeToolbarButton(identifier: .tagUser),
-//            makeToolbarButton(identifier: .setLocation),
-            headerButton,
-            listButton,
-            makeToolbarButton(identifier: .blockquote),
-            makeToolbarButton(identifier: .bold),
-            makeToolbarButton(identifier: .italic),
-            makeToolbarButton(identifier: .link)
+            makeToolbarButton(identifier: .icon),
+            makeToolbarButton(identifier: .tagUser),
+            makeToolbarButton(identifier: .setLocation),
+//            headerButton,
+//            listButton,
+//            makeToolbarButton(identifier: .blockquote),
+//            makeToolbarButton(identifier: .bold),
+//            makeToolbarButton(identifier: .italic),
+//            makeToolbarButton(identifier: .link)
         ]
     }
 
@@ -1169,17 +1171,18 @@ extension EditorDemoController {
     }    
 }
 
+// indentifier formatting of each icon func
 extension FormattingIdentifier {
 
     var iconImage: UIImage {
 
         switch(self) {
-//        case .icon:
-//            return gridicon(.icon)
-//        case .tagUser:
-//            return gridicon(.tagUser)
-//        case .setLocation:
-//            return gridicon(.setlocation)
+        case .icon:
+            return gridicon(.icon)
+        case .tagUser:
+            return gridicon(.tagUser)
+        case .setLocation:
+            return gridicon(.setlocation)
         case .media:
             return gridicon(.addOutline)
         case .p:
@@ -1232,12 +1235,12 @@ extension FormattingIdentifier {
 
     var accessibilityIdentifier: String {
         switch(self) {
-//        case .icon:
-//            return "formatToolbarInsertIcon"
-//        case .tagUser:
-//            return "formatToolbarInsertTagUser"
-//        case.setLocation:
-//            return "formatToolbarSetLoction"
+        case .icon:
+            return "formatToolbarInsertIcon"
+        case .tagUser:
+            return "formatToolbarInsertTagUser"
+        case.setLocation:
+            return "formatToolbarSetLoction"
         case .media:
             return "formatToolbarInsertMedia"
         case .p:
@@ -1394,8 +1397,8 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
 	return input.rawValue
 }
 
-//extension FormattingIdentifier{
-//    public static let icon = FormattingIdentifier("icon")
-//    public static let setLocation = FormattingIdentifier("location")
-//    public static let tagUser = FormattingIdentifier("tagUser")
-//}
+extension FormattingIdentifier{
+    public static let icon = FormattingIdentifier("icon")
+    public static let setLocation = FormattingIdentifier("location")
+    public static let tagUser = FormattingIdentifier("tagUser")
+}
